@@ -4,10 +4,10 @@ date: 2025-08-12
 ---
 
 <head>
-  <title>Perplexity - Aparavi Data Toolchain Documentation</title>
+  <title>Perplexity - RocketRide Documentation</title>
 </head>
 
-The **Perplexity node** integrates Perplexity AI's powerful large language models into your Aparavi workflow. This documentation helps you understand how to use and configure the Perplexity node effectively. This is typically used for tasks such as real-time web search, reasoning, content generation, and comprehensive research.
+The **Perplexity node** integrates Perplexity AI's powerful large language models into your RocketRide workflow. This documentation helps you understand how to use and configure the Perplexity node effectively. This is typically used for tasks such as real-time web search, reasoning, content generation, and comprehensive research.
 
 
 ## **Key capabilities**

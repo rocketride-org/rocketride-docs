@@ -4,7 +4,7 @@ date: 2025-07-29
 ---
 
 <head>
-  <title>Import/Export Pipelines - Aparavi Data Toolchain Documentation</title>
+  <title>Import/Export Pipelines - RocketRide Documentation</title>
 </head>
 
 The pipeline import/export functionality allows you to save your pipeline configurations as JSON files and share them across different environments or restore them later. This enables you to backup your workflows, transfer configurations between systems, and reuse successful pipeline designs. The system preserves all component configurations, connections, and settings while allowing for environment-specific adjustments during import.

@@ -4,7 +4,7 @@ date: 2025-05-18
 ---
 
 <head>
-  <title>Pinecone Vector Store - Aparavi Data Toolchain Documentation</title>
+  <title>Pinecone Vector Store - RocketRide Documentation</title>
 </head>
 
 The Pinecone Vector Store node connects your pipeline to a Pinecone index, enabling high-speed vector search capabilities. It stores and retrieves document embeddings and matches them against queries using vector similarity. 

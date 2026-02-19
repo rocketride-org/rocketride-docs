@@ -4,10 +4,10 @@ date: 2025-07-20
 ---
 
 <head>
-  <title>VertexAI - Aparavi Data Toolchain Documentation</title>
+  <title>VertexAI - RocketRide Documentation</title>
 </head>
 
-The **VertexAI node** integrates Google Cloud's powerful large language models into your Aparavi workflow. This documentation helps you understand how to use and configure the VertexAI node effectively. This is typically used for tasks such as reasoning, summarization, content generation, and conversational response.
+The **VertexAI node** integrates Google Cloud's powerful large language models into your RocketRide workflow. This documentation helps you understand how to use and configure the VertexAI node effectively. This is typically used for tasks such as reasoning, summarization, content generation, and conversational response.
 
 
 ## **Key capabilities:**

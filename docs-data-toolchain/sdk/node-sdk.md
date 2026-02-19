@@ -5,18 +5,18 @@ title: Node SDK
 ---
 
 <head>
-  <title>Node SDK - Aparavi Data Toolchain Documentation</title>
+  <title>Node SDK - RocketRide Documentation</title>
 </head>
 
-# Aparavi Client SDK (Node)
+# RocketRide Client SDK (Node)
 
-A comprehensive TypeScript/JavaScript client library for the Aparavi data processing and AI platform. This package provides both a programmatic API and a command-line interface for managing Aparavi pipelines, uploading files, and processing data.
+A comprehensive TypeScript/JavaScript client library for the RocketRide data processing and AI platform. This package provides both a programmatic API and a command-line interface for managing RocketRide pipelines, uploading files, and processing data.
 
 ## Features
 
-- **Pipeline Management**: Start, monitor, and control Aparavi data processing pipelines
+- **Pipeline Management**: Start, monitor, and control RocketRide data processing pipelines
 - **File Upload**: Upload files with progress tracking and parallel processing
-- **AI Chat**: Interact with Aparavi's AI capabilities
+- **AI Chat**: Interact with RocketRide's AI capabilities
 - **Real-time Monitoring**: Monitor pipeline status and metrics in real-time
 - **Auto-reconnection**: Automatic reconnection with persistence support
 - **Dual Module Support**: Works with both CommonJS and ES modules
@@ -39,7 +39,7 @@ npm install -g aparavi-client
 
 ### Using the CLI
 
-The CLI automatically connects to the Aparavi cloud service at `eaas.aparavi.com:443` by default.
+The CLI automatically connects to the RocketRide cloud service at `eaas.aparavi.com:443` by default.
 
 ```bash
 # Start a pipeline (automatically uses eaas.aparavi.com)
@@ -503,7 +503,7 @@ const results = await client.sendFiles(files, token);
 
 ### Connection Defaults
 
-The client automatically connects to the Aparavi cloud service:
+The client automatically connects to the RocketRide cloud service:
 - **Default Host**: `eaas.aparavi.com`
 - **Default Port**: `443`
 - **Protocol**: `wss://` (secure WebSocket)
@@ -518,7 +518,7 @@ You don't need to specify these unless connecting to a custom server.
 
 2. **403 Forbidden Error**: 
    - Your API key is invalid, expired, or lacks permissions
-   - Get a new API key from your Aparavi account settings
+   - Get a new API key from your RocketRide account settings
 
 3. **301 Redirect Error**: 
    - You're using an old version of the package

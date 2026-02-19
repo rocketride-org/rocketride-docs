@@ -4,7 +4,7 @@ date: 2025-08-13
 ---
 
 <head>
-  <title>Prompt - Aparavi Data Toolchain Documentation</title>
+  <title>Prompt - RocketRide Documentation</title>
 </head>
 
 ## **What does it do?**

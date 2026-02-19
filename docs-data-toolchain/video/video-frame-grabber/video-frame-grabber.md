@@ -4,7 +4,7 @@ date: 2025-07-08
 ---
 
 <head>
-  <title>Video Frame Grabber - Aparavi Data Toolchain Documentation</title>
+  <title>Video Frame Grabber - RocketRide Documentation</title>
 </head>
 
 ## **What does it do?**

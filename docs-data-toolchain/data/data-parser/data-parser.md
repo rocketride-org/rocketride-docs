@@ -4,7 +4,7 @@ date: 2025-05-18
 ---
 
 <head>
-  <title>Data Parser - Aparavi Data Toolchain Documentation</title>
+  <title>Data Parser - RocketRide Documentation</title>
 </head>
 
 The Data - Parser node processes unstructured input and automatically routes it into structured output types. It serves as a multipurpose entry point for raw data of unknown or mixed types and splits them into defined formats such as text, tables, audio, images, or video.

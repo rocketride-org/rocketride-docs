@@ -1,15 +1,15 @@
-# Aparavi Data Catalog
+# RocketRide Data Catalog
 
 <head>
-  <title>Aparavi Data Catalog - Aparavi Data Suite Documentation</title>
+  <title>RocketRide Data Catalog - RocketRide Documentation</title>
 </head>
 
-The Aparavi Data Catalog connector streams curated, processed data from Aparavi Data Suite into your processing pipelines, providing metadata-rich datasets that eliminate the need for raw file processing.
+The RocketRide Data Catalog connector streams curated, processed data from RocketRide into your processing pipelines, providing metadata-rich datasets that eliminate the need for raw file processing.
 
 
 ## Key capabilities
 
-* **Intelligent Data Streaming**: Receives pre-processed data with comprehensive metadata, file signatures, and duplicate detection from Aparavi Data Suite
+* **Intelligent Data Streaming**: Receives pre-processed data with comprehensive metadata, file signatures, and duplicate detection from RocketRide
 * **Historical Preservation**: Maintains static snapshots of data state for trend analysis and compliance reporting
 * **OCR Integration**: Automatically includes extracted text content from documents and images when enabled in ADS
 * **Permission-Aware Processing**: Streams data with ownership information and access permissions from source systems
@@ -18,15 +18,15 @@ The Aparavi Data Catalog connector streams curated, processed data from Aparavi 
 
 ### Basic Configuration
 
-* **Catalog Name**: Select the catalog to use for data streaming. This parameter uses the `apa_catalog` widget to choose from available Aparavi Data Suite catalogs. The catalog must be configured in ADS with a webhook URL pointing to your connector instance.
-* **Webhook Setup**: Configure the webhook endpoint URL in Aparavi Data Suite's data transport settings. This URL receives processed data from ADS and forwards it to the connector.
+* **Catalog Name**: Select the catalog to use for data streaming. This parameter uses the `apa_catalog` widget to choose from available RocketRide catalogs. The catalog must be configured in ADS with a webhook URL pointing to your connector instance.
+* **Webhook Setup**: Configure the webhook endpoint URL in RocketRide's data transport settings. This URL receives processed data from ADS and forwards it to the connector.
 * **Data Transport**: Create a data transport endpoint in ADS and set up filtering criteria to control which data flows through the connector.
 
 ## Inputs and Outputs
 
 ### Input Channels
 
-* **_source → tags**: Accepts data from Aparavi Data Suite webhooks. Input includes documents with metadata, file signatures, permissions, OCR-extracted text, and custom classification tags. Size limits depend on ADS configuration and webhook payload settings.
+* **_source → tags**: Accepts data from RocketRide webhooks. Input includes documents with metadata, file signatures, permissions, OCR-extracted text, and custom classification tags. Size limits depend on ADS configuration and webhook payload settings.
 
 ### Output Channels
 
@@ -40,7 +40,7 @@ The Aparavi Data Catalog connector streams curated, processed data from Aparavi 
 
 ## Data Flow Process
 
-* **ADS Processing**: Aparavi Data Suite scans source data, extracts metadata, applies intelligence (duplicate detection, OCR, permissions analysis), and filters based on configured criteria.
+* **ADS Processing**: RocketRide scans source data, extracts metadata, applies intelligence (duplicate detection, OCR, permissions analysis), and filters based on configured criteria.
 * **Webhook Transmission**: Processed data is sent through the configured webhook URL with authentication handled by ADS security framework.
 * **Connector Reception**: The ADS Catalog connector receives webhook data, validates and formats it according to the catalog configuration.
 * **Output Streaming**: Formatted documents are streamed to downstream pipeline components through the output channel, ready for further processing or storage.
@@ -56,8 +56,8 @@ The Aparavi Data Catalog connector streams curated, processed data from Aparavi 
 
 ### Authentication Errors
 
-* Connection to ADS fails → Verify webhook URL configuration in Aparavi Data Suite data transport settings and ensure proper authentication is configured
-* Permission errors → Ensure proper authentication between ADS and connector through the Aparavi Data Suite security framework
+* Connection to ADS fails → Verify webhook URL configuration in RocketRide data transport settings and ensure proper authentication is configured
+* Permission errors → Ensure proper authentication between ADS and connector through the RocketRide security framework
 
 ### Input Limitations
 
@@ -71,4 +71,4 @@ The Aparavi Data Catalog connector streams curated, processed data from Aparavi 
 
 ## Additional Resources
 
-* <a href="https://docs.aparavi.com/data-suite/overview" target="_blank" rel="noopener">Aparavi Data Suite Documentation</a>
+* <a href="https://docs.aparavi.com/data-suite/overview" target="_blank" rel="noopener">RocketRide Documentation</a>

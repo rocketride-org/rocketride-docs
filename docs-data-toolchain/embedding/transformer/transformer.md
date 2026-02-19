@@ -4,7 +4,7 @@ date: 2025-05-03
 ---
 
 <head>
-  <title>Sentence Transformer - Aparavi Data Toolchain Documentation</title>
+  <title>Sentence Transformer - RocketRide Documentation</title>
 </head>
 
 The Sentence Transformer node converts input text into vector representations using a sentence transformer model. These embeddings can be used in downstream tasks such as semantic search or question answering.

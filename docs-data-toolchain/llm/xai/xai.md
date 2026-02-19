@@ -4,7 +4,7 @@ date: 2025-05-03
 ---
 
 <head>
-  <title>xAI - Aparavi Data Toolchain Documentation</title>
+  <title>xAI - RocketRide Documentation</title>
 </head>
 
 The **xAI** **node** allows connection to xAI’s language models for processing natural language questions and generating responses. This node is used to send prompts to a specified model and return text-based answers via token-based authentication.

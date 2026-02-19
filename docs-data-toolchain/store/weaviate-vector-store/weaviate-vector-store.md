@@ -4,7 +4,7 @@ date: 2025-05-03
 ---
 
 <head>
-  <title>Weaviate Vector Store - Aparavi Data Toolchain Documentation</title>
+  <title>Weaviate Vector Store - RocketRide Documentation</title>
 </head>
 
 The [Weaviate](https://weaviate.io/) Vector Store node enables integration with a Weaviate vector database, either hosted on the cloud or deployed locally. This node allows storage and retrieval of vectorized documents for downstream LLM tasks. 
@@ -64,7 +64,7 @@ Connects to a Weaviate cloud instance.
 
 **Embedded Mode**
 
-Uses an embedded Weaviate instance within Aparavi.
+Uses an embedded Weaviate instance within RocketRide.
 
 ```
 {

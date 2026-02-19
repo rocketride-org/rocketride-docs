@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Aparavi Documentation',
-  tagline: 'Comprehensive guides and resources for Aparavi products and services',
+  title: 'RocketRide Documentation',
+  tagline: 'Comprehensive guides and resources for RocketRide products and services',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -74,7 +74,7 @@ const config: Config = {
       contextualSearch: false,
     },
     navbar: {
-      title: 'Aparavi',
+      title: 'RocketRide',
       logo: {
         alt: 'RocketRide Logo',
         src: 'img/rocketride_logo_colored.png',
@@ -84,7 +84,7 @@ const config: Config = {
       },
       items: [
         {
-          label: 'Data Toolchain Documentation',
+          label: 'Documentation',
           to: '/intro',
           position: 'left',
           docsPluginId: 'data-toolchain',
@@ -110,7 +110,7 @@ const config: Config = {
       ],
     },
     footer: {
-      copyright: `© ${new Date().getFullYear()} Aparavi Software | 
+      copyright: `© ${new Date().getFullYear()} RocketRide |
       <a href="https://aparavi.com/end-user-license-agreement/" target="_blank" style="color: inherit; text-decoration: none;">End User License Agreement</a> | 
       <a href="https://aparavi.com/master-saas-agreement/" target="_blank" style="color: inherit; text-decoration: none;">Master Saas Agreement</a> | 
       <a href="https://aparavi.com/privacy-policy" target="_blank" style="color: inherit; text-decoration: none;">Privacy Policy</a> | 

@@ -4,7 +4,7 @@ date: 2025-05-18
 ---
 
 <head>
-  <title>Microsoft OneDrive - Aparavi Data Toolchain Documentation</title>
+  <title>Microsoft OneDrive - RocketRide Documentation</title>
 </head>
 
 The Microsoft OneDrive node connects to OneDrive or SharePoint Online accounts using enterprise-level credentials. This allows users to access files stored in Microsoft cloud environments. Configuration requires Azure-based application credentials and region information. 

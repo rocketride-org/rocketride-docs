@@ -4,7 +4,7 @@ date: 2025-05-18
 ---
 
 <head>
-  <title>GMail - Aparavi Data Toolchain Documentation</title>
+  <title>GMail - RocketRide Documentation</title>
 </head>
 
 The Google Gmail node allows users to connect to Gmail accounts via Google Workspace. It supports extracting data from specific users and folders within an organization’s domain. Configuration requires service account credentials and administrative permissions.

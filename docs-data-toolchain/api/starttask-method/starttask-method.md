@@ -4,7 +4,7 @@ date: 2025-07-29
 ---
 
 <head>
-  <title>StartTask Method - Aparavi Data Toolchain Documentation</title>
+  <title>StartTask Method - RocketRide Documentation</title>
 </head>
 
 - [Overview](#overview)
@@ -234,7 +234,7 @@ The `pipelineJson` parameter should follow this structure:
 
 ## **API Endpoint**
 
-This method calls the Aparavi API endpoint:
+This method calls the RocketRide API endpoint:
 
 - **URL**: `PUT /task`
 - **Headers**: `Authorization: your-api-key`, `Content-Type: application/json`
@@ -244,4 +244,4 @@ This method calls the Aparavi API endpoint:
 
 **Next:** Learn how to [monitor task status](../gettask-method/gettask-method.md) after starting a task.
 
-© 2025 Aparavi. All rights reserved.
+© 2025 RocketRide. All rights reserved.

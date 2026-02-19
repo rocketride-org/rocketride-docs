@@ -4,7 +4,7 @@ date: 2025-05-18
 ---
 
 <head>
-  <title>Microsoft Outlook - Aparavi Data Toolchain Documentation</title>
+  <title>Microsoft Outlook - RocketRide Documentation</title>
 </head>
 
 The Microsoft Outlook node connects to Outlook mailboxes using Azure enterprise credentials. It allows ingestion of data such as emails and folders by authenticating through Microsoft’s secure APIs. 

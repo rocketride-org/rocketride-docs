@@ -4,7 +4,7 @@ date: 2025-07-22
 ---
 
 <head>
-  <title>Audio Transcription Simple - Aparavi Data Toolchain Documentation</title>
+  <title>Audio Transcription Simple - RocketRide Documentation</title>
 </head>
 
 Streamlined workflow that processes audio files through transcription and summarization with minimal components for maximum efficiency
@@ -68,8 +68,8 @@ Returns structured JSON output
 
 #### **Start the Pipeline**
 
-1. **Log into Aparavi** and create a new project
-2. **Run your pipeline** in the Aparavi Engine
+1. **Log into RocketRide** and create a new project
+2. **Run your pipeline** in the RocketRide Engine
 3. **Look for the Webhook URL** message in the Project Log
 4. **Copy the webhook URL** (e.g., `http://localhost:8080/webhook/...`)
 

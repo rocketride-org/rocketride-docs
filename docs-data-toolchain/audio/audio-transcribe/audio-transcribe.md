@@ -4,7 +4,7 @@ date: 2025-07-08
 ---
 
 <head>
-  <title>Audio - Transcribe - Aparavi Data Toolchain Documentation</title>
+  <title>Audio - Transcribe - RocketRide Documentation</title>
 </head>
 
 ## **What does it do?**

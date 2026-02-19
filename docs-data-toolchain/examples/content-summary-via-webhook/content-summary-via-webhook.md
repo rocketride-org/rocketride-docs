@@ -4,7 +4,7 @@ date: 2025-07-22
 ---
 
 <head>
-  <title>Content Summary via Webhook - Aparavi Data Toolchain Documentation</title>
+  <title>Content Summary via Webhook - RocketRide Documentation</title>
 </head>
 
 Comprehensive AI-powered workflow for extracting, transcribing, summarizing, and analyzing content from various file types using Gemini LLM
@@ -65,7 +65,7 @@ Returns structured JSON output
 
 #### **Start the Pipeline**
 
-1. Run your pipeline in the Aparavi Engine
+1. Run your pipeline in the RocketRide Engine
 2. Look for the **Webhook URL** message in the Project Log
 3. Copy the webhook URL (e.g., `http://localhost:8080/webhook/...`)
 

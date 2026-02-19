@@ -5,12 +5,12 @@ coverImage: "Remote‑to‑Local-Tunnel-Ngrok-4.png"
 ---
 
 <head>
-  <title>Remote‑to‑Local Tunnel (Ngrok) - Aparavi Data Toolchain Documentation</title>
+  <title>Remote‑to‑Local Tunnel (Ngrok) - RocketRide Documentation</title>
 </head>
 
-## Setting Up Ngrok to Local Services from Aparavi Data Toolchain for AI Cloud
+## Setting Up Ngrok to Local Services from RocketRide Cloud
 
-This guide walks you through configuring Ngrok on your **local machine** to expose **Local Service as Mysql or Qdrant** to Aparavi Data Toolchain for AI Cloud, which runs remotely.
+This guide walks you through configuring Ngrok on your **local machine** to expose **Local Service as Mysql or Qdrant** to RocketRide Cloud, which runs remotely.
 
 ### Prerequisites
 
@@ -94,7 +94,7 @@ tcp://1.tcp.ngrok.io:12345
 ```
 
 
-## Provide Connection Info to Aparavi Data Toolchain for AI Cloud
+## Provide Connection Info to RocketRide Cloud
 
 Send your exposed connection info (host and port) to configure it in your dashboard. For example:
 

@@ -4,23 +4,23 @@ date: 2025-07-29
 ---
 
 <head>
-  <title>Node.js SDK Quickstart - Aparavi Data Toolchain Documentation</title>
+  <title>Node.js SDK Quickstart - RocketRide Documentation</title>
 </head>
 
 **What you'll learn**
 
-- How to call Aparavi APIs without writing a line of code
+- How to call RocketRide APIs without writing a line of code
 - How to manage third-party dependencies using npm
-- How to install the latest Aparavi DTC Node.js SDK
+- How to install the latest RocketRide DTC Node.js SDK
 - How to send your first SDK request
 
 ## **Initial setup**
 
-First, create an Aparavi account or sign in to get your API credentials.
+First, create an RocketRide account or sign in to get your API credentials.
 
 ### **Install the Node.js server-side SDK**
 
-The latest version of the Aparavi DTC Node.js SDK supports Node.js versions 12.0.0+.
+The latest version of the RocketRide DTC Node.js SDK supports Node.js versions 12.0.0+.
 
 Check your Node.js version:
 
@@ -90,4 +90,4 @@ Validating pipeline... Pipeline validation successful: `{ status: 'valid' }` ...
 
 **Next steps:** Explore the [full API reference](./) to learn about all available methods and features.
 
-© 2025 Aparavi. All rights reserved.
+© 2025 RocketRide. All rights reserved.

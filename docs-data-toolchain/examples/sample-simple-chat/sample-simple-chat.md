@@ -4,7 +4,7 @@ date: 2025-07-19
 ---
 
 <head>
-  <title>Sample Simple Chat - Aparavi Data Toolchain Documentation</title>
+  <title>Sample Simple Chat - RocketRide Documentation</title>
 </head>
 
 A user interface component that provides a web-based **chat** experience. It creates its own HTTP endpoint, configured by host and port, to serve a simple **chat UI**. Users can interact with the interface to submit questions, which are routed through the attached pipeline for processing. Designed for easy integration, it enables the addition of conversational capabilities to any pipeline workflow.

@@ -4,7 +4,7 @@ date: 2025-05-18
 ---
 
 <head>
-  <title>Text Anonymization - Aparavi Data Toolchain Documentation</title>
+  <title>Text Anonymization - RocketRide Documentation</title>
 </head>
 
 **Text - Anonymize** node allows you to anonymize sensitive information from input text using pre-trained named entity recognition (NER) models. It replaces detected entities (like names or organizations) with a specified masking character. 

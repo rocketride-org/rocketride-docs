@@ -4,12 +4,12 @@ title: Python SDK
 ---
 
 <head>
-  <title>Python SDK - Aparavi Data Toolchain Documentation</title>
+  <title>Python SDK - RocketRide Documentation</title>
 </head>
 
-# Aparavi Client SDK (Python)
+# RocketRide Client SDK (Python)
 
-A Python SDK for executing Aparavi pipelines using the Debug Adapter Protocol (DAP). This client provides a simplified interface for connecting to Aparavi DAP servers, executing pipelines, managing data transfer operations, and interacting with AI services.
+A Python SDK for executing RocketRide pipelines using the Debug Adapter Protocol (DAP). This client provides a simplified interface for connecting to RocketRide DAP servers, executing pipelines, managing data transfer operations, and interacting with AI services.
 
 ## Features
 
@@ -297,15 +297,15 @@ AparaviClient(uri: str, auth: str, **kwargs)
 #### Connection Methods
 
 **`async connect() -> None`**  
-Establish connection to the Aparavi server.
+Establish connection to the RocketRide server.
 
 **`async disconnect() -> None`**  
-Close connection to the Aparavi server and stop automatic reconnection.
+Close connection to the RocketRide server and stop automatic reconnection.
 
 #### Execution Methods
 
 **`async use(**kwargs) -> Dict[str, Any]`**  
-Start an Aparavi pipeline for processing data. Automatically performs environment variable substitution on the pipeline configuration.
+Start an RocketRide pipeline for processing data. Automatically performs environment variable substitution on the pipeline configuration.
 
 Parameters:
 - `pipeline` (dict, optional): Pipeline configuration dictionary
@@ -343,7 +343,7 @@ Create a streaming data pipe for sending large datasets.
 #### Chat Methods
 
 **`async chat(token: str, question: Question) -> Dict[str, Any]`**  
-Ask a question to Aparavi's AI and get an intelligent response.
+Ask a question to RocketRide's AI and get an intelligent response.
 
 **Important:** Use this method with pipelines that have `chat` as the source component. For document processing/uploads, use `send()` or `send_files()` with a `webhook` source instead.
 
@@ -528,7 +528,7 @@ try:
     print(f'Pipeline started: {result["token"]}')
     
 except AparaviException as e:
-    print(f'Aparavi Error: {e}')
+    print(f'RocketRide Error: {e}')
 except ConnectionError as e:
     print(f'Connection Error: {e}')
 except Exception as e:
@@ -546,7 +546,7 @@ finally:
 
 **403 Forbidden Error**:
 - Your API key is invalid, expired, or lacks permissions
-- Get a new API key from your Aparavi account settings
+- Get a new API key from your RocketRide account settings
 
 **Pipeline Not Found**:
 - Verify the pipeline file path and JSON format

@@ -4,7 +4,7 @@ date: 2025-05-02
 ---
 
 <head>
-  <title>Qdrant Vector Store - Aparavi Data Toolchain Documentation</title>
+  <title>Qdrant Vector Store - RocketRide Documentation</title>
 </head>
 
 The **Qdrant Vector Store** node enables integration with a Qdrant vector database for storing and retrieving vector embeddings based on semantic similarity. It supports both Qdrant cloud servers and self-hosted deployments. 
@@ -37,7 +37,7 @@ The **Qdrant Vector Store** node enables integration with a Qdrant vector databa
 
 - Embedded: Uses an embedded Qdrant server within the application
 - Local: Connects to a Qdrant server on your infrastructure
-    - [This guide](https://staging.aparavi.com/documentation-aparavi/data-toolchain-for-ai-documentation/sources-components-data-toolchain-for-ai-documentation/remote%e2%80%91to%e2%80%91local-tunnel-ngrok/) walks you through configuring Ngrok on your **local machine** to expose **Local Service as Mysql or Qdrant** to Aparavi Data Toolchain for AI Cloud, which runs remotely.
+    - [This guide](https://staging.aparavi.com/documentation-aparavi/data-toolchain-for-ai-documentation/sources-components-data-toolchain-for-ai-documentation/remote%e2%80%91to%e2%80%91local-tunnel-ngrok/) walks you through configuring Ngrok on your **local machine** to expose **Local Service as Mysql or Qdrant** to RocketRide Cloud, which runs remotely.
         
 - Cloud: Connects to a Qdrant cloud instance
 

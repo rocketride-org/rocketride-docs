@@ -4,7 +4,7 @@ date: 2025-05-03
 ---
 
 <head>
-  <title>Question - Aparavi Data Toolchain Documentation</title>
+  <title>Question - RocketRide Documentation</title>
 </head>
 
 The Question node is used to define static or dynamic questions that will be paired with text input and sent downstream for answer generation, semantic search, or extraction tasks. This is typically used in Retrieval-Augmented Generation (RAG) pipelines, where predefined questions are evaluated against document content.

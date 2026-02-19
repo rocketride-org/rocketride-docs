@@ -4,10 +4,10 @@ date: 2025-08-12
 ---
 
 <head>
-  <title>Mistral AI - Aparavi Data Toolchain Documentation</title>
+  <title>Mistral AI - RocketRide Documentation</title>
 </head>
 
-The **Mistral node** integrates Mistral AI's language models with the Aparavi Data Toolchain, providing optimized models for various tasks. This documentation helps you understand how to use and configure the Mistral node effectively. This is typically used for tasks such as natural language processing, complex reasoning, technical content generation, and conversational AI.
+The **Mistral node** integrates Mistral AI's language models with the RocketRide, providing optimized models for various tasks. This documentation helps you understand how to use and configure the Mistral node effectively. This is typically used for tasks such as natural language processing, complex reasoning, technical content generation, and conversational AI.
 
  
 ## **Key capabilities**

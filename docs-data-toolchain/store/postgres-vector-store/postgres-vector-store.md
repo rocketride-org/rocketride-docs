@@ -4,7 +4,7 @@ date: 2025-08-19
 ---
 
 <head>
-  <title>PostgreSQL Vector Store - Aparavi Data Toolchain Documentation</title>
+  <title>PostgreSQL Vector Store - RocketRide Documentation</title>
 </head>
 
 The **PostgreSQL Vector Store** node connects your pipeline to a **PostgreSQL database**, leveraging the **pgvector** extension for powerful vector search capabilities.

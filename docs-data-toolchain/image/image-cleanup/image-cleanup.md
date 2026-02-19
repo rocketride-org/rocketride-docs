@@ -4,7 +4,7 @@ date: 2025-07-29
 ---
 
 <head>
-  <title>Image Cleanup - Aparavi Data Toolchain Documentation</title>
+  <title>Image Cleanup - RocketRide Documentation</title>
 </head>
 
 

@@ -4,7 +4,7 @@ date: 2025-05-18
 ---
 
 <head>
-  <title>Data Fingerprinter - Aparavi Data Toolchain Documentation</title>
+  <title>Data Fingerprinter - RocketRide Documentation</title>
 </head>
 
 **What does it do?**

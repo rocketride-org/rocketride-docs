@@ -4,7 +4,7 @@ date: 2025-05-03
 ---
 
 <head>
-  <title>Dictionary - Aparavi Data Toolchain Documentation</title>
+  <title>Dictionary - RocketRide Documentation</title>
 </head>
 
 The Dictionary node enables lookups, tagging, or transformations using a predefined dictionary structure. It can operate over documents, questions, or general text, and emit structured outputs to be used in retrieval-augmented generation (RAG), classification, or enrichment pipelines.

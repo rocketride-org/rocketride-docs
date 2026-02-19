@@ -4,10 +4,10 @@ date: 2025-09-04
 ---
 
 <head>
-  <title>Slack - Aparavi Data Toolchain Documentation</title>
+  <title>Slack - RocketRide Documentation</title>
 </head>
 
-The **Slack node** allows users to ingest their slack conversations and files shared within them, making messages and attachments available for processing in your Aparavi workflow.
+The **Slack node** allows users to ingest their slack conversations and files shared within them, making messages and attachments available for processing in your RocketRide workflow.
 
 
 * * *
@@ -17,18 +17,18 @@ The **Slack node** allows users to ingest their slack conversations and files sh
 - Ingest Conversations: Capture messages from public channels, private channels, and direct messages.
 - File Ingestion: Collect files shared within Slack, including documents, images, and other attachments.
 - Granular Channel Control: Include or exclude specific channels or conversations during setup.
-- Pipeline Integration: Seamlessly feed Slack data into Aparavi pipelines for search, classification, and compliance workflows
+- Pipeline Integration: Seamlessly feed Slack data into RocketRide pipelines for search, classification, and compliance workflows
 
 * * *
 
 ## **Configuration**
 
 - Authentication Type - Select whether to connect through a corporate-managed Slack bot or a personal Slack account.
-    - Service - use a service account to access slack data through the Aparavi slack app bot
+    - Service - use a service account to access slack data through the RocketRide slack app bot
     - Personal - use a personal account to access slack data through a user token
 - Steps to Connect:
     - Click "**Connect to Slack**"
-    - When prompted by Slack, click **“Allow”** to grant Aparavi permission to access your workspace.
+    - When prompted by Slack, click **“Allow”** to grant RocketRide permission to access your workspace.
 - Conversation Filtering (optional)
     - You can control which Slack conversations are ingested by including or excluding specific channels or DMs.
     - **Include Conversations**: Only the listed conversations will be ingested. By default, all conversations the user or bot has access to will be included
@@ -51,7 +51,7 @@ The **Slack node** allows users to ingest their slack conversations and files sh
 
 ## **Common Use Cases**
 
-- **Compliance & eDiscovery**: Ingest Slack conversations and files into Aparavi pipelines to meet regulatory or legal discovery requirements.
+- **Compliance & eDiscovery**: Ingest Slack conversations and files into RocketRide pipelines to meet regulatory or legal discovery requirements.
 - **Data Governance**: Apply classification and retention policies to Slack messages and attachments to ensure proper handling of sensitive data.
 - **Analytics & Insights**: Combine Slack data with other enterprise sources for sentiment analysis, productivity insights, or knowledge management.
 - **Selective Monitoring**: Use conversation filtering to capture only specific channels or DMs that are relevant to ongoing projects or investigations.
@@ -62,7 +62,7 @@ The **Slack node** allows users to ingest their slack conversations and files sh
 
 ### Service vs. Personal Token Access
 
-- **Service**: Service accounts can only read messages from channels they have explicitly invited the Aparavi bot to. Service accounts cannot access direct messages (DMs)
+- **Service**: Service accounts can only read messages from channels they have explicitly invited the RocketRide bot to. Service accounts cannot access direct messages (DMs)
 - **Personal**: A user token allows access to all channels and DMs that the user is a member of. This includes direct messages and group conversations, but only those the user participates in.
 
 * * *

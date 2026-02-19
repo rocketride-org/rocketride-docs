@@ -4,7 +4,7 @@ date: 2025-05-03
 ---
 
 <head>
-  <title>Ollama - Aparavi Data Toolchain Documentation</title>
+  <title>Ollama - RocketRide Documentation</title>
 </head>
 
 The Ollama node allows users to connect to a locally or remotely hosted Ollama LLM endpoint. It sends natural language prompts to the model and returns generated responses. This is useful for use cases such as summarization, Q&A, and instruction following

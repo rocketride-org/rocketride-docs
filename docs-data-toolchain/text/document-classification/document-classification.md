@@ -4,7 +4,7 @@ date: 2025-05-03
 ---
 
 <head>
-  <title>Text Classification - Aparavi Data Toolchain Documentation</title>
+  <title>Text Classification - RocketRide Documentation</title>
 </head>
 
 This node enables policy-based classification of textual input according to predefined privacy, compliance, or national security categories. It supports multiple classification contexts, including country-specific policies. 

@@ -4,7 +4,7 @@ date: 2025-07-19
 ---
 
 <head>
-  <title>Sample Basic RAG Pipeline - Aparavi Data Toolchain Documentation</title>
+  <title>Sample Basic RAG Pipeline - RocketRide Documentation</title>
 </head>
 
 This pipeline connects your documents to AI language models, creating a system that answers questions based on your specific information. It works by finding relevant parts of your documents when asked a question, then using those parts to create accurate answers that reflect what's in your files rather than generic knowledge.
@@ -34,7 +34,7 @@ This is a **Retrieval-Augmented Generation (RAG) pipeline** using Qdrant as the 
 
 | **Node** | **Function** |
 | --- | --- |
-| **Aparavi Sample Data** | Pulls raw files from a Drive or documentation repository |
+| **RocketRide Sample Data** | Pulls raw files from a Drive or documentation repository |
 | **Data Parser** | Extracts plain text from each input file |
 | **Preprocessor** | Cleans and splits text into manageable segments (documents) |
 | **Embedding Transformer** | Converts documents (and separately, questions) into vector embeddings |
@@ -51,7 +51,7 @@ This node pulls your source files (e.g., Google Drive, S3, local docs).
 #### **How it works**
 
 - (e.g. Google Drive)
-    1. You click ▶️ on the Aparavi Sample Data node.
+    1. You click ▶️ on the RocketRide Sample Data node.
     2. It fetches files from the configured drive path.
 
 ### **2\. Data Parser Node**

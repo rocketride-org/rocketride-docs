@@ -4,7 +4,7 @@ date: 2025-05-18
 ---
 
 <head>
-  <title>Image – OCR - Aparavi Data Toolchain Documentation</title>
+  <title>Image – OCR - RocketRide Documentation</title>
 </head>
 
 The OCR node extracts text from image-based documents or raw images using Optical Character Recognition (OCR). This is useful for converting scanned files, screenshots, or image-based documents into machine-readable text for downstream processing.

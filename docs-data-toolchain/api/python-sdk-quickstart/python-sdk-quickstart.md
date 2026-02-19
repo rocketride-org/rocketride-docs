@@ -4,14 +4,14 @@ date: 2025-07-29
 ---
 
 <head>
-  <title>Python SDK Quickstart - Aparavi Data Toolchain Documentation</title>
+  <title>Python SDK Quickstart - RocketRide Documentation</title>
 </head>
 
 **What you'll learn**
 
-- How to call Aparavi APIs
+- How to call RocketRide APIs
 - How to manage third-party dependencies using npm
-- How to install the latest Aparavi DTC Python SDK
+- How to install the latest RocketRide DTC Python SDK
 - How to send your first SDK request
 
 * * *
@@ -29,7 +29,7 @@ date: 2025-07-29
 
 ## **Initial setup**
 
-First, create an Aparavi account or sign in to get your API credentials.
+First, create an RocketRide account or sign in to get your API credentials.
 
 ### **Install the TestPyPI package**
 
@@ -103,13 +103,13 @@ python quick_start.py
 
 | Function | Purpose | Description |
 | --- | --- | --- |
-| `validate_pipeline` | Pipeline Validation | Validates a pipeline structure against Aparavi's backend to ensure it is correctly formed before execution, helping catch configuration errors early in the development process. |
-| `execute_pipeline` | Pipeline Execution | Submits a pipeline for execution on the Aparavi platform, enabling automated processing of your data workflows with proper error handling and status tracking. |
+| `validate_pipeline` | Pipeline Validation | Validates a pipeline structure against RocketRide's backend to ensure it is correctly formed before execution, helping catch configuration errors early in the development process. |
+| `execute_pipeline` | Pipeline Execution | Submits a pipeline for execution on the RocketRide platform, enabling automated processing of your data workflows with proper error handling and status tracking. |
 | `execute_pipeline_workflow` | End-to-End Workflow Execution | Performs a full end-to-end execution lifecycle for a pipeline, combining multiple operations into a single streamlined call for simplified automation. |
 | `get_pipeline_status` | Status Monitoring | Fetches the current execution status of a pipeline task, allowing you to monitor progress, check for completion, and handle any execution issues that may arise. |
 | `teardown_pipeline` | Pipeline Management | Gracefully ends a running pipeline task, ensuring proper cleanup of resources and allowing for controlled termination of long-running processes. |
 | `send_payload_to_webhook` | Data Submission | Sends file(s) to a running webhook-based pipeline, enabling real-time data processing and integration with external systems and applications. |
-| `get_version` | Version Management | Fetches the current version of the Aparavi API/backend, ensuring compatibility and helping maintain proper version control in your applications. |
+| `get_version` | Version Management | Fetches the current version of the RocketRide API/backend, ensuring compatibility and helping maintain proper version control in your applications. |
 
 * * *
 
@@ -187,4 +187,4 @@ except Exception as e:
 
 **Next steps:** Explore the [full API reference](./) to learn about all available methods and features.
 
-© 2025 Aparavi. All rights reserved.
+© 2025 RocketRide. All rights reserved.

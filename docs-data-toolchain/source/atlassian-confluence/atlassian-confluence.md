@@ -4,12 +4,12 @@ date: 2025-05-18
 ---
 
 <head>
-  <title>Atlassian Confluence - Aparavi Data Toolchain Documentation</title>
+  <title>Atlassian Confluence - RocketRide Documentation</title>
 </head>
 
 ### General
 
-The Atlassian Confluence node is a source node in the Data Toolchain for AI. It connects to Confluence Cloud and allows users to extract page and blogpost content from defined paths.
+The Atlassian Confluence node is a source node in the RocketRide. It connects to Confluence Cloud and allows users to extract page and blogpost content from defined paths.
 
 This node requires valid authentication and clearly defined path rules for inclusion and exclusion of content.
 
