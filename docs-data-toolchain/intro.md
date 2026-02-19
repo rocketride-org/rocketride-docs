@@ -9,7 +9,7 @@ sidebar_label: Intro
 
 # Introduction
 
-The RocketRide is a powerful, flexible platform for building custom data processing pipelines. By combining a series of modular components, or **Nodes**, you can create sophisticated workflows to handle everything from data ingestion and transformation to analysis and storage.
+RocketRide is a powerful, flexible platform for building custom data processing pipelines. By combining a series of modular components, or **Nodes**, you can create sophisticated workflows to handle everything from data ingestion and transformation to analysis and storage.
 
 This documentation is your guide to understanding and mastering RocketRide.
 
