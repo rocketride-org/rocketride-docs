@@ -53,15 +53,6 @@ const config: Config = {
         sidebarPath: './sidebars.ts',
       },
     ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'data-suite',
-        path: 'docs-data-suite',
-        routeBasePath: 'data-suite',
-        sidebarPath: './sidebars-data-suite.ts',
-      },
-    ],
   ],
 
   themeConfig: {
@@ -98,13 +89,6 @@ const config: Config = {
           position: 'left',
           docsPluginId: 'data-toolchain',
           activeBasePath: 'data-toolchain',
-        },
-        {
-          label: 'Data Suite Documentation',
-          to: 'data-suite/overview',
-          position: 'left',
-          docsPluginId: 'data-suite',
-          activeBasePath: 'data-suite',
         },
         {
           href: 'https://discord.gg/9hr3tdZmEG',
