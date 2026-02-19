@@ -76,9 +76,9 @@ const config: Config = {
     navbar: {
       title: 'Aparavi',
       logo: {
-        alt: 'Aparavi Logo',
-        src: 'img/aparavi_logo_dark.png',
-        srcDark: 'img/aparavi_logo_white.png',
+        alt: 'RocketRide Logo',
+        src: 'img/rocketride_logo_colored.png',
+        srcDark: 'img/rocketride_logo_white.png',
         href: 'https://www.aparavi.com',
         target: '_blank',
       },
