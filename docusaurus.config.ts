@@ -49,7 +49,7 @@ const config: Config = {
       {
         id: 'data-toolchain',
         path: 'docs-data-toolchain',
-        routeBasePath: 'data-toolchain',
+        routeBasePath: '/',
         sidebarPath: './sidebars.ts',
       },
     ],
@@ -85,10 +85,10 @@ const config: Config = {
       items: [
         {
           label: 'Data Toolchain Documentation',
-          to: 'data-toolchain/intro',
+          to: '/intro',
           position: 'left',
           docsPluginId: 'data-toolchain',
-          activeBasePath: 'data-toolchain',
+          activeBasePath: '/',
         },
         {
           href: 'https://discord.gg/9hr3tdZmEG',
