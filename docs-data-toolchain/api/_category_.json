@@ -1,0 +1,8 @@
+{
+  "label": "API Nodes",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "API nodes for integrating with various web services and REST APIs."
+  }
+}

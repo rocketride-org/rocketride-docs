@@ -1,0 +1,8 @@
+{
+  "label": "Infrastructure Nodes",
+  "position": 9,
+  "link": {
+    "type": "generated-index",
+    "description": "Infrastructure and deployment nodes for cloud and on-premises environments."
+  }
+}

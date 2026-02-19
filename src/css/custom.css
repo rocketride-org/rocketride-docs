@@ -1,0 +1,187 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-font-family-base: 'Aeonik', sans-serif;
+  --ifm-link-color: #2563eb;
+  --ifm-font-color-base: #374151;
+  --ifm-heading-color: #111827;
+  --ifm-code-background: #f3f4f6;
+  --ifm-code-border-radius: 4px;
+  --ifm-code-padding-horizontal: 6px;
+  --ifm-code-padding-vertical: 3px;
+  --ifm-color-primary: #374151;
+  --ifm-color-primary-dark: #2d3748;
+  --ifm-color-primary-darker: #1f2937;
+  --ifm-color-primary-darkest: #111827;
+  --ifm-color-primary-light: #4b5563;
+  --ifm-color-primary-lighter: #6b7280;
+  --ifm-color-primary-lightest: #9ca3af;
+  --ifm-color-secondary: #fb923c;
+  --ifm-color-secondary-dark: #f97316;
+  --ifm-color-secondary-darker: #ea580c;
+  --ifm-color-secondary-darkest: #dc2626;
+  --ifm-color-secondary-light: #fdba74;
+  --ifm-color-secondary-lighter: #fed7aa;
+  --ifm-color-secondary-lightest: #ffedd5;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-footer-background-color: #ffffff;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-link-color: #fdba74;
+  --ifm-font-color-base: #ffffff;
+  --ifm-heading-color: #ffffff;
+  --ifm-code-background: #1f293770;
+  --ifm-color-primary:  #F0975B​;
+  --ifm-color-primary-dark: #919498;
+  --ifm-color-primary-darker: #757a80;
+  --ifm-color-primary-darkest: #5d636a;
+  --ifm-color-primary-light: #d1d2d4c0;
+  --ifm-color-primary-lighter: #e4e4e5bc;
+  --ifm-color-primary-lightest: #e6f0fac8;
+  --ifm-color-secondary: #fdba74;
+  --ifm-color-secondary-dark: #fb923c;
+  --ifm-color-secondary-darker: #f97316;
+  --ifm-color-secondary-darkest: #ea580c;
+  --ifm-color-secondary-light: #fed7aa;
+  --ifm-color-secondary-lighter: #ffedd5;
+  --ifm-color-secondary-lightest: #fff7ed;
+  --ifm-background-color: #202020;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-footer-background-color: #202020;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/fonts/Aeonik-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/fonts/Aeonik-RegularItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/fonts/Aeonik-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/fonts/Aeonik-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/fonts/Aeonik-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/fonts/Aeonik-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/fonts/Aeonik-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/fonts/Aeonik-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/fonts/Aeonik-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/fonts/Aeonik-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/fonts/Aeonik-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/fonts/Aeonik-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+:not(pre) > code {
+  border: 1px solid #d1d5db;
+}
+
+[data-theme='dark'] :not(pre) > code {
+  border-color: #4b5563;
+}
+
+.header-github-link {
+  display: inline-block;
+  margin-left: 1rem;
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.header-discord-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  width: 26px;
+  height: 26px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.header-github-link {
+  background-image: url('/img/github-mark.png');
+}
+
+.header-discord-link {
+  background-image: url('/img/discord_black.png');
+}
+
+/* In dark mode, you might want to use different icons */
+[data-theme='dark'] .header-github-link {
+  background-image: url('/img/github-mark-white.png');
+}
+
+[data-theme='dark'] .header-discord-link {
+  background-image: url('/img/discord_white.png');
+}

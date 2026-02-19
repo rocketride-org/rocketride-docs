@@ -1,0 +1,8 @@
+{
+  "label": "Embedding Nodes",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "Nodes for embedding models."
+  }
+}

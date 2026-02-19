@@ -1,0 +1,8 @@
+{
+  "label": "Source Nodes",
+  "position": 13,
+  "link": {
+    "type": "generated-index",
+    "description": "Source nodes for ingesting data from various systems and platforms."
+  }
+}

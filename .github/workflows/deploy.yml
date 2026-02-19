@@ -1,0 +1,69 @@
+name: Deploy DTC SaaS UI to S3
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Build and Deploy Docusaurus documentation site to S3
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Docusaurus site
+        run: |
+          pnpm build
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ vars.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Deploy to S3
+        run: |
+          echo "Deploying to S3 bucket: $S3_BUCKET"
+          aws s3 sync $BUILD_PATH s3://$S3_BUCKET/ --delete \
+            --cache-control "public, max-age=31536000, immutable" \
+            --exclude "index.html" \
+            --exclude "*.html"
+
+          # Upload HTML files without caching
+          aws s3 sync $BUILD_PATH s3://$S3_BUCKET/ \
+            --exclude "*" \
+            --include "index.html" \
+            --include "*.html" \
+            --cache-control "no-cache, no-store, must-revalidate"
+
+          echo "Invalidating CloudFront distribution: $CLOUDFRONT_ID"
+          aws cloudfront create-invalidation \
+            --distribution-id $CLOUDFRONT_ID \
+            --paths "/*"
+        env:
+          BUILD_PATH: "build/"
+          S3_BUCKET: "docs.aparavi.com"
+          CLOUDFRONT_ID: "E34YRRDHYG5EP9"
+
+      - name: Deployment Summary
+        run: |
+          echo "✅ Docusaurus site deployed successfully"
+          echo "Build completed at: $(date)"

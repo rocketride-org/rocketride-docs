@@ -1,0 +1,8 @@
+{
+  "label": "MCP Server Nodes",
+  "position": 11,
+  "link": {
+    "type": "generated-index",
+    "description": "Model Context Protocol (MCP) server nodes and implementations."
+  }
+}

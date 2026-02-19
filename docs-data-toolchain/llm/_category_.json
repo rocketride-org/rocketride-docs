@@ -1,0 +1,8 @@
+{
+  "label": "LLM Nodes",
+  "position": 10,
+  "link": {
+    "type": "generated-index",
+    "description": "Nodes for Large Language Models."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "label": "Store Nodes",
+  "position": 14,
+  "link": {
+    "type": "generated-index",
+    "description": "Storage nodes for persisting and retrieving data from various storage systems."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "label": "Image Nodes",
+  "position": 8,
+  "link": {
+    "type": "generated-index",
+    "description": "Image processing and manipulation nodes."
+  }
+}
