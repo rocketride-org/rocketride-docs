@@ -97,7 +97,7 @@ const config: Config = {
           'aria-label': 'Discord server',
         },
         {
-          href: 'https://github.com/AparaviSoftware',
+          href: 'https://github.com/rocketride-ai',
           position: 'right',
           className: 'header-github-link',
           'aria-label': 'GitHub repository',
@@ -114,7 +114,7 @@ const config: Config = {
       <a href="https://aparavi.com/end-user-license-agreement/" target="_blank" style="color: inherit; text-decoration: none;">End User License Agreement</a> | 
       <a href="https://aparavi.com/master-saas-agreement/" target="_blank" style="color: inherit; text-decoration: none;">Master Saas Agreement</a> | 
       <a href="https://aparavi.com/privacy-policy" target="_blank" style="color: inherit; text-decoration: none;">Privacy Policy</a> | 
-      <a href="https://github.com/AparaviSoftware" target="_blank" style="color: inherit; text-decoration: none;">GitHub</a> | 
+      <a href="https://github.com/rocketride-ai" target="_blank" style="color: inherit; text-decoration: none;">GitHub</a> | 
       <a href="https://discord.gg/9hr3tdZmEG" target="_blank" style="color: inherit; text-decoration: none;">Discord</a> | 
       <a href="https://www.youtube.com/@AparaviSoftware" target="_blank" style="color: inherit; text-decoration: none;">YouTube</a>`,
     },
