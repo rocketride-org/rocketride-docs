@@ -1,4 +1,4 @@
-name: Deploy DTC SaaS UI to S3
+name: Deploy Docs to S3
 
 on:
   push:
@@ -6,9 +6,18 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_REGION: us-east-1
+  S3_BUCKET: docs.rocketride.ai
+  CLOUDFRONT_ID: E3OODZ66STIMSU
+
 jobs:
   deploy:
-    name: Build and Deploy Docusaurus documentation site to S3
+    name: Build and Deploy Docusaurus to docs.rocketride.ai
     runs-on: ubuntu-latest
 
     steps:
@@ -29,26 +38,23 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build Docusaurus site
-        run: |
-          pnpm build
+        run: pnpm build
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-access-key-id: ${{ vars.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
 
       - name: Deploy to S3
         run: |
           echo "Deploying to S3 bucket: $S3_BUCKET"
-          aws s3 sync $BUILD_PATH s3://$S3_BUCKET/ --delete \
+          aws s3 sync build/ s3://$S3_BUCKET/ --delete \
             --cache-control "public, max-age=31536000, immutable" \
             --exclude "index.html" \
             --exclude "*.html"
 
-          # Upload HTML files without caching
-          aws s3 sync $BUILD_PATH s3://$S3_BUCKET/ \
+          aws s3 sync build/ s3://$S3_BUCKET/ \
             --exclude "*" \
             --include "index.html" \
             --include "*.html" \
@@ -58,12 +64,8 @@ jobs:
           aws cloudfront create-invalidation \
             --distribution-id $CLOUDFRONT_ID \
             --paths "/*"
-        env:
-          BUILD_PATH: "build/"
-          S3_BUCKET: "docs.aparavi.com"
-          CLOUDFRONT_ID: "E34YRRDHYG5EP9"
 
       - name: Deployment Summary
         run: |
-          echo "✅ Docusaurus site deployed successfully"
+          echo "Docusaurus site deployed to https://docs.rocketride.ai"
           echo "Build completed at: $(date)"
