@@ -85,7 +85,7 @@ const config: Config = {
 			items: [
 				{
 					label: 'Documentation',
-					to: '/intro',
+					to: '/',
 					position: 'left',
 					docsPluginId: 'data-toolchain',
 					activeBasePath: '/',
