@@ -4,7 +4,7 @@ date: 2025-05-18
 ---
 
 <head>
-  <title>HTTP Results - Aparavi Data Toolchain Documentation</title>
+  <title>HTTP Results - RocketRide Documentation</title>
 </head>
 
 The HTTP Results node is used to define the structure of the HTTP response when running a pipeline as an API. It allows the selection of which data lanes (example Text, Audio, Table) should be returned as part of the final HTTP response.

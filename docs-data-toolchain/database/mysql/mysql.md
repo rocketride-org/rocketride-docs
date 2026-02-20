@@ -4,7 +4,7 @@ date: 2025-05-18
 ---
 
 <head>
-  <title>MySQL - Aparavi Data Toolchain Documentation</title>
+  <title>MySQL - RocketRide Documentation</title>
 </head>
 
 

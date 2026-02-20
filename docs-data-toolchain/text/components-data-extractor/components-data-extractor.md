@@ -4,7 +4,7 @@ date: 2025-05-03
 ---
 
 <head>
-  <title>Data Extractor - Aparavi Data Toolchain Documentation</title>
+  <title>Data Extractor - RocketRide Documentation</title>
 </head>
 
 This component extracts structured data from unstructured or semi-structured text. It identifies and extracts specific fields and values from documents based on configurable extraction rules.

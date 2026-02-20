@@ -4,7 +4,7 @@ date: 2025-05-03
 ---
 
 <head>
-  <title>OpenAI - Aparavi Data Toolchain Documentation</title>
+  <title>OpenAI - RocketRide Documentation</title>
 </head>
 
 ## **What does it do?**

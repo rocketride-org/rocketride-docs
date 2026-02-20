@@ -4,7 +4,7 @@ date: 2025-05-03
 ---
 
 <head>
-  <title>Anthropic - Aparavi Data Toolchain Documentation</title>
+  <title>Anthropic - RocketRide Documentation</title>
 </head>
 
 The **Anthropic node** integrates Anthropic's Claude large language models into your workflow. It accepts input prompts, processes them using a selected Claude model, and returns generated answers. This node is typically used for tasks such as reasoning, summarization, content generation, and conversational response.

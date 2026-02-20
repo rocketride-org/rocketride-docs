@@ -4,7 +4,7 @@ date: 2025-07-22
 ---
 
 <head>
-  <title>Video Key Frame Grabber - Aparavi Data Toolchain Documentation</title>
+  <title>Video Key Frame Grabber - RocketRide Documentation</title>
 </head>
 
 Advanced video processing workflow that extracts key frames, generates thumbnails, creates vector embeddings, and stores them in a vector database for similarity search and analysis
@@ -73,8 +73,8 @@ Stores and retrieves vector embeddings for similarity search
 
 #### **Start the Pipeline**
 
-1. Log into Aparavi and create a new project
-2. Run your pipeline in the Aparavi Engine
+1. Log into RocketRide and create a new project
+2. Run your pipeline in the RocketRide Engine
 3. Look for the Webhook URL message in the Project Log
 4. Copy the webhook URL (e.g., `http://localhost:8080/webhook/...`)
 

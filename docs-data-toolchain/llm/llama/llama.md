@@ -4,7 +4,7 @@ date: 2025-07-08
 ---
 
 <head>
-  <title>Llama - Aparavi Data Toolchain Documentation</title>
+  <title>Llama - RocketRide Documentation</title>
 </head>
 
 The **Llama node** integrates Meta's powerful Llama large language models into your workflow. This documentation helps you understand how to use and configure the Llama node effectively. This is typically used for tasks such as reasoning, summarization, content generation, and conversational response.

@@ -4,7 +4,7 @@ date: 2025-08-29
 ---
 
 <head>
-  <title>Preprocessor: LLM - Aparavi Data Toolchain Documentation</title>
+  <title>Preprocessor: LLM - RocketRide Documentation</title>
 </head>
 
 An intelligent document preprocessing node that uses Large Language Models to analyze and chunk documents into semantic segments optimized for vector embedding storage and enhanced searchability.

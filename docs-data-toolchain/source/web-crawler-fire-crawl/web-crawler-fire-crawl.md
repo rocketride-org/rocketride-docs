@@ -4,7 +4,7 @@ date: 2025-08-12
 ---
 
 <head>
-  <title>Web Crawler - Fire Crawl - Aparavi Data Toolchain Documentation</title>
+  <title>Web Crawler - Fire Crawl - RocketRide Documentation</title>
 </head>
 
 ## **What does it do?**

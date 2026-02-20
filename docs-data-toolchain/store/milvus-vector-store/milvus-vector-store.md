@@ -4,7 +4,7 @@ date: 2025-05-03
 ---
 
 <head>
-  <title>Milvus Vector Store - Aparavi Data Toolchain Documentation</title>
+  <title>Milvus Vector Store - RocketRide Documentation</title>
 </head>
 
 The Milvus Vector Store node connects to a Milvus vector database to store and retrieve embeddings. This node is used to query semantically similar documents or vectors based on the user’s questions or inputs. 
@@ -79,6 +79,6 @@ This example shows how to use Milvus Vector Store in a basic Retrieval Augmented
 For detailed technical information, refer to:
 
 - [Milvus Official Documentation](https://milvus.io/docs)
-- Aparavi Milvus node Source Code /../../../aparavi-nodes/nodes/milvus/milvus.py
+- RocketRide Milvus node Source Code /../../../aparavi-nodes/nodes/milvus/milvus.py
 - [Milvus Configuration Schema](https://github.com/AparaviSoftware/dtc-documentation/blob/main/aparavi-nodes/nodes/milvus/services.json)
 - [This guide](https://staging.aparavi.com/documentation-aparavi/data-toolchain-for-ai-documentation/sources-components-data-toolchain-for-ai-documentation/remote%e2%80%91to%e2%80%91local-tunnel-ngrok/) walks you through configuring Ngrok on your **local machine**

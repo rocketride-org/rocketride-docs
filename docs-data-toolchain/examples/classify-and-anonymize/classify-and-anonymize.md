@@ -4,7 +4,7 @@ date: 2025-07-19
 ---
 
 <head>
-  <title>Classify and Anonymize - Aparavi Data Toolchain Documentation</title>
+  <title>Classify and Anonymize - RocketRide Documentation</title>
 </head>
 
 ﻿This example is of a streamlined pipeline for text **classification and anonymization** before embedding. This integrated workflow intelligently categorizes content and removes personally identifiable information (PII) from text data, ensuring both regulatory compliance and data privacy while preparing it for optimal vector embedding and retrieval in AI applications.
@@ -60,7 +60,7 @@ This node pulls your source files (e.g., Google Drive, S3, local docs).
 
 (e.g., Google Drive)
 
-1. 1. Click ▶️ on the Aparavi Sample Data node. You'll see two options in the Files section.
+1. 1. Click ▶️ on the RocketRide Sample Data node. You'll see two options in the Files section.
     2. The node fetches files from the configured drive path when you select **'Preselected Data Sets.'**
     3. If you select **'Custom Data sets,'** you'll need to provide the sample data path in the text box.
     4. Learn more about the Google Drive source node here: [link](https://aparavi.com/documentation-aparavi/data-toolchain-for-ai-documentation/sources-components-data-toolchain-for-ai-documentation/google-drive/)

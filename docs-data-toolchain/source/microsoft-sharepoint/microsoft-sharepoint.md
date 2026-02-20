@@ -4,7 +4,7 @@ date: 2025-05-18
 ---
 
 <head>
-  <title>Microsoft SharePoint - Aparavi Data Toolchain Documentation</title>
+  <title>Microsoft SharePoint - RocketRide Documentation</title>
 </head>
 
 The Microsoft SharePoint node enables access to SharePoint Online folders within an organization. It uses enterprise authentication via Azure and requires valid application credentials for access. 

@@ -4,10 +4,10 @@ date: 2025-02-08
 ---
 
 <head>
-  <title>Azure Blob - Aparavi Data Toolchain Documentation</title>
+  <title>Azure Blob - RocketRide Documentation</title>
 </head>
 
-The Azure Blob node is a source node in the Data Toolchain for AI. It allows users to connect to their Azure Blob Storage and ingest files into a pipeline. The node requires Azure credentials and folder paths to include or exclude during the data import process.
+The Azure Blob node is a source node in the RocketRide. It allows users to connect to their Azure Blob Storage and ingest files into a pipeline. The node requires Azure credentials and folder paths to include or exclude during the data import process.
 
 
 ### Required Configuration

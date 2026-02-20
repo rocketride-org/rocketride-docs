@@ -1,24 +1,24 @@
 ---
-title: "Aparavi MCP Server"
+title: "RocketRide MCP Server"
 date: 2025-10-20
 ---
 
 <head>
-  <title>Aparavi MCP Server - Aparavi Data Toolchain Documentation</title>
+  <title>RocketRide MCP Server - RocketRide Documentation</title>
 </head>
 
-# Aparavi MCP Server
+# RocketRide MCP Server
 
-A Python [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server that integrates with the Aparavi Platform. It exposes Aparavi data processing tools to LLMs, allowing them to stream local files directly to Aparavi EaaS for advanced processing (OCR, classification, PII detection, etc.).
+A Python [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server that integrates with the RocketRide Platform. It exposes RocketRide data processing tools to LLMs, allowing them to stream local files directly to RocketRide EaaS for advanced processing (OCR, classification, PII detection, etc.).
 
 ## **Overview**
 
-The Aparavi MCP server provides two types of capabilities:
+The RocketRide MCP server provides two types of capabilities:
 
-1. **Custom Pipeline Tools**: Any running tasks/pipelines in your Aparavi account are dynamically exposed as MCP tools
+1. **Custom Pipeline Tools**: Any running tasks/pipelines in your RocketRide account are dynamically exposed as MCP tools
 2. **Built-in Tools**: Ready-to-use tools that require no setup in DTC
 
-This enables Language Models to leverage the full power of Aparavi's data processing capabilities directly from your AI client.
+This enables Language Models to leverage the full power of RocketRide's data processing capabilities directly from your AI client.
 
 ## **Features**
 
@@ -52,7 +52,7 @@ pip install aparavi-mcp
 
 Add the server to your MCP host configuration (e.g., `mcp.json` for Cursor, `claude_desktop_config.json` for Claude Desktop).
 
-You will need your Aparavi API key and URI.
+You will need your RocketRide API key and URI.
 
 ```json
 {
@@ -73,22 +73,22 @@ You will need your Aparavi API key and URI.
 
 ## **Getting Your API Key**
 
-To obtain your API key for authentication, visit your Aparavi account settings or contact your Aparavi administrator.
+To obtain your API key for authentication, visit your RocketRide account settings or contact your RocketRide administrator.
 
 ## **Usage**
 
 Once configured, the following tools will be available to your LLM:
 
-### **1. Aparavi Document Processor**
+### **1. RocketRide Document Processor**
 
-A convenience tool that processes a file using a standard Aparavi document processing pipeline.
+A convenience tool that processes a file using a standard RocketRide document processing pipeline.
 
 - **Input**: `filepath` (Absolute path to the local file)
 - **Output**: Extracted text and metadata
 
 ### **2. Custom Pipelines**
 
-Any running tasks/pipelines in your Aparavi account will also be dynamically exposed as tools.
+Any running tasks/pipelines in your RocketRide account will also be dynamically exposed as tools.
 
 ## **Pipeline Requirements**
 

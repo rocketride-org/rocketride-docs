@@ -4,7 +4,7 @@ date: 2025-05-18
 ---
 
 <head>
-  <title>Object Storage (S3 compatible) - Aparavi Data Toolchain Documentation</title>
+  <title>Object Storage (S3 compatible) - RocketRide Documentation</title>
 </head>
 
 The Object Storage node connects to any S3-compatible service endpoint, allowing users to retrieve data from custom object storage systems. Configuration requires the service URL and access credentials. 

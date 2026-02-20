@@ -4,7 +4,7 @@ date: 2025-07-19
 ---
 
 <head>
-  <title>Advanced RAG Pipeline - Aparavi Data Toolchain Documentation</title>
+  <title>Advanced RAG Pipeline - RocketRide Documentation</title>
 </head>
 
 **The advanced RAG pipeline** builds two separate vector indexes, one on raw text and one on AI-generated summaries, to power smarter, faster retrieval. It accepts both file data and live chat input, and uses Qdrant as the vector store, plus Gemini (via Ollama) as the final answer LLM.
@@ -12,7 +12,7 @@ date: 2025-07-19
  
 | **Node** | **Function** |
 | --- | --- |
-| **Aparavi Sample Data** | Pulls source files (docs, PDFs, images, audio/video) from Google Drive or S3 |
+| **RocketRide Sample Data** | Pulls source files (docs, PDFs, images, audio/video) from Google Drive or S3 |
 | **Chat Input** | Captures user questions or prompts via a chat interface |
 | **Data Parser** | Splits each file into Text, Table, Image, Audio, and Video streams |
 | **Text Summarization** | Uses a VertexAI LLM to create concise summaries of parsed text |
@@ -33,7 +33,7 @@ date: 2025-07-19
 
 (e.g., Google Drive)
 
-1. Click ▶️ on the Aparavi Sample Data node. You'll see two options in the Files section.
+1. Click ▶️ on the RocketRide Sample Data node. You'll see two options in the Files section.
 2. The node fetches files from the configured drive path when you select **'Preselected Data Sets.'**
 3. If you select **'Custom Data sets,'** you'll need to provide the sample data path in the text box.
 4. Learn more about the Google Drive source node here: [link](https://aparavi.com/documentation-aparavi/data-toolchain-for-ai-documentation/sources-components-data-toolchain-for-ai-documentation/google-drive/)

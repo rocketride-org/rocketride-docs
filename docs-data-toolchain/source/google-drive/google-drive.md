@@ -4,7 +4,7 @@ date: 2025-03-31
 ---
 
 <head>
-  <title>Google Drive - Aparavi Data Toolchain Documentation</title>
+  <title>Google Drive - RocketRide Documentation</title>
 </head>
 
 The Google Drive node allows users to ingest files from Google Drive within a Google Workspace environment.

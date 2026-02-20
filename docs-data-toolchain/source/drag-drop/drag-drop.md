@@ -4,7 +4,7 @@ date: 2025-07-29
 ---
 
 <head>
-  <title>Drag & Drop - Aparavi Data Toolchain Documentation</title>
+  <title>Drag & Drop - RocketRide Documentation</title>
 </head>
 
 # **What does it do?**

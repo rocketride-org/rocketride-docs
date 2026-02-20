@@ -4,7 +4,7 @@ date: 2025-08-11
 ---
 
 <head>
-  <title>Mistral Vision - Aparavi Data Toolchain Documentation</title>
+  <title>Mistral Vision - RocketRide Documentation</title>
 </head>
 
 The **Mistral Vision node** integrates Mistral's powerful vision-enabled language models into your workflow. This documentation helps you understand how to use and configure the Mistral Vision node effectively. This is typically used for image analysis, visual reasoning, and generating text responses based on visual inputs.

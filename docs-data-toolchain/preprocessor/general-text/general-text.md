@@ -4,7 +4,7 @@ date: 2025-05-03
 ---
 
 <head>
-  <title>General Text - Aparavi Data Toolchain Documentation</title>
+  <title>General Text - RocketRide Documentation</title>
 </head>
 
 The **General Text preprocessor node** splits unstructured or semi-structured text into smaller document chunks suitable for indexing, embedding, or LLM input. It supports table and plain text formats and applies configurable splitting logic for optimal text segmentation.

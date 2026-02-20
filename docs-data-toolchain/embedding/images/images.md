@@ -4,7 +4,7 @@ date: 2025-05-02
 ---
 
 <head>
-  <title>Images - Aparavi Data Toolchain Documentation</title>
+  <title>Images - RocketRide Documentation</title>
 </head>
 
 ## **What does it do?**

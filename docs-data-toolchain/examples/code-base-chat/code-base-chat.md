@@ -4,7 +4,7 @@ date: 2025-07-22
 ---
 
 <head>
-  <title>Code Base Chat - Aparavi Data Toolchain Documentation</title>
+  <title>Code Base Chat - RocketRide Documentation</title>
 </head>
 
 Intelligent code processing workflow that parses, tokenizes, and embeds source code into a vector database for semantic search and AI-powered code assistance

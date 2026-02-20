@@ -4,7 +4,7 @@ date: 2025-08-11
 ---
 
 <head>
-  <title>Reducto - Aparavi Data Toolchain Documentation</title>
+  <title>Reducto - RocketRide Documentation</title>
 </head>
 
 The Data–Reducto node utilizes Reducto AI to perform high-quality OCR and parsing on documents, extracting clean text and well-structured tables.

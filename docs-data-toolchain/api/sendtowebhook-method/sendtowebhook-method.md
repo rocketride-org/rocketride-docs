@@ -4,7 +4,7 @@ date: 2025-07-29
 ---
 
 <head>
-  <title>SendToWebhook Method - Aparavi Data Toolchain Documentation</title>
+  <title>SendToWebhook Method - RocketRide Documentation</title>
 </head>
 
 - [Overview](#overview)
@@ -191,7 +191,7 @@ await client.sendToWebhook('./data/export_*.csv');
 
 ## **API Endpoint**
 
-This method calls the Aparavi API endpoint:
+This method calls the RocketRide API endpoint:
 
 - **URL**: `PUT /webhook`
 - **Headers**: `Authorization: your-api-key`, `Content-Type: multipart/form-data`
@@ -202,4 +202,4 @@ This method calls the Aparavi API endpoint:
 
 **Next:** Learn how to [clean up tasks](../deletetask-method/deletetask-method.md) after file uploads are complete.
 
-© 2025 Aparavi. All rights reserved.
+© 2025 RocketRide. All rights reserved.

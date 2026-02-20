@@ -4,7 +4,7 @@ date: 2025-05-18
 ---
 
 <head>
-  <title>Chat - Aparavi Data Toolchain Documentation</title>
+  <title>Chat - RocketRide Documentation</title>
 </head>
 
 The Chat node is used to connect to a custom chat endpoint, allowing communication through a specified host, port, and endpoint path. This node is useful when integrating a running chat service into a pipeline.

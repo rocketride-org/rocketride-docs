@@ -4,10 +4,10 @@ date: 2025-07-07
 ---
 
 <head>
-  <title>Gemini - Aparavi Data Toolchain Documentation</title>
+  <title>Gemini - RocketRide Documentation</title>
 </head>
 
-The **Gemini node** integrates Google's powerful Gemini large language models into your Aparavi workflow. This documentation helps you understand how to use and configure the Gemini node effectively. This is typically used for tasks such as reasoning, summarization, multimodal content generation, and conversational response.
+The **Gemini node** integrates Google's powerful Gemini large language models into your RocketRide workflow. This documentation helps you understand how to use and configure the Gemini node effectively. This is typically used for tasks such as reasoning, summarization, multimodal content generation, and conversational response.
 
 
 ## **Configuration:**

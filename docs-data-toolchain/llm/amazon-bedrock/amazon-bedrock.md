@@ -4,7 +4,7 @@ date: 2025-05-03
 ---
 
 <head>
-  <title>Amazon Bedrock - Aparavi Data Toolchain Documentation</title>
+  <title>Amazon Bedrock - RocketRide Documentation</title>
 </head>
 
 Amazon Bedrock node enables connection to large language models hosted via Amazon Bedrock. This allows users to process questions or text prompts and return generated responses directly in the pipeline.

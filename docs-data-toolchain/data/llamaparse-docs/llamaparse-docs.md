@@ -4,7 +4,7 @@ date: 2025-09-02
 ---
 
 <head>
-  <title>Llamaparse - Aparavi Data Toolchain Documentation</title>
+  <title>Llamaparse - RocketRide Documentation</title>
 </head>
 
 # **LlamaParse node**

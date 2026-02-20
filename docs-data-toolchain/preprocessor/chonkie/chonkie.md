@@ -4,10 +4,10 @@ date: 2025-08-12
 ---
 
 <head>
-  <title>Chonkie - Aparavi Data Toolchain Documentation</title>
+  <title>Chonkie - RocketRide Documentation</title>
 </head>
 
-The **Chonkie Preprocessor** integrates advanced text chunking capabilities into the Aparavi workflow. It offers multiple intelligent chunking strategies for optimal document processing and text data segmentation.
+The **Chonkie Preprocessor** integrates advanced text chunking capabilities into the RocketRide workflow. It offers multiple intelligent chunking strategies for optimal document processing and text data segmentation.
 
 
 ## **Key Capabilities**

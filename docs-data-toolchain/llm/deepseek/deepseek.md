@@ -4,7 +4,7 @@ date: 2025-05-03
 ---
 
 <head>
-  <title>Deepseek - Aparavi Data Toolchain Documentation</title>
+  <title>Deepseek - RocketRide Documentation</title>
 </head>
 
 The **Deepseek node** connects to Deepseek's large language models for processing natural language prompts and generating responses. It integrates LLM functionality into your workflow through token-based API authentication. This node is typically used for tasks such as text generation, code creation, reasoning, and conversational AI.

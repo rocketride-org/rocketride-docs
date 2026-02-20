@@ -4,7 +4,7 @@ date: 2025-07-29
 ---
 
 <head>
-  <title>Validate Method - Aparavi Data Toolchain Documentation</title>
+  <title>Validate Method - RocketRide Documentation</title>
 </head>
 
 - [Overview](#overview)
@@ -23,7 +23,7 @@ date: 2025-07-29
 
 ## **Overview**
 
-The `validate` method allows you to validate pipeline configurations against the Aparavi API before executing them. This is an essential step in ensuring your data transfer tasks will run successfully.
+The `validate` method allows you to validate pipeline configurations against the RocketRide API before executing them. This is an essential step in ensuring your data transfer tasks will run successfully.
 
 ## **Method Signature**
 
@@ -173,7 +173,7 @@ The `pipelineJson` parameter should follow this structure:
 ## **Performance Considerations**
 
 - **Validation Time**: Validation typically completes within 1-3 seconds
-- **Network Dependency**: Requires internet connection to reach Aparavi API
+- **Network Dependency**: Requires internet connection to reach RocketRide API
 - **Caching**: Consider caching validation results for repeated configurations
 - **Batch Validation**: Validate multiple pipelines sequentially, not in parallel
 
@@ -192,7 +192,7 @@ The `pipelineJson` parameter should follow this structure:
 
 ## **API Endpoint**
 
-This method calls the Aparavi API endpoint:
+This method calls the RocketRide API endpoint:
 
 - **URL**: `POST /pipe/validate`
 - **Headers**: `Authorization: your-api-key`, `Content-Type: application/json`
@@ -202,4 +202,4 @@ This method calls the Aparavi API endpoint:
 
 **Next:** Learn how to [start tasks](../starttask-method/starttask-method.md) after successful validation.
 
-© 2025 Aparavi. All rights reserved.
+© 2025 RocketRide. All rights reserved.

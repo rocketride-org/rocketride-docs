@@ -4,7 +4,7 @@ date: 2025-05-18
 ---
 
 <head>
-  <title>Chroma Vector Store - Aparavi Data Toolchain Documentation</title>
+  <title>Chroma Vector Store - RocketRide Documentation</title>
 </head>
 
 The Chroma Vector Store node allows you to store and query vectorized documents in a ChromaDB server. It connects to your specified host and port, using a defined collection name to organize indexed data. 

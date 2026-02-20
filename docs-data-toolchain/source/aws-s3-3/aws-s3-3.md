@@ -4,10 +4,10 @@ date: 2025-05-18
 ---
 
 <head>
-  <title>AWS S3 - Aparavi Data Toolchain Documentation</title>
+  <title>AWS S3 - RocketRide Documentation</title>
 </head>
 
-The AWS S3 node is a source node in the Data Toolchain for AI. It allows users to securely connect to Amazon S3 buckets to import files and folders into their data pipelines.
+The AWS S3 node is a source node in the RocketRide. It allows users to securely connect to Amazon S3 buckets to import files and folders into their data pipelines.
 
 This node requires AWS credentials and clearly defined include/exclude paths to specify which S3 objects to work with.
 

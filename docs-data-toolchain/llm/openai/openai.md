@@ -4,7 +4,7 @@ date: 2025-05-03
 ---
 
 <head>
-  <title>OpenAI - Aparavi Data Toolchain Documentation</title>
+  <title>OpenAI - RocketRide Documentation</title>
 </head>
 
 The **OpenAI node** connects to OpenAI’s hosted large language models. It accepts input prompts, processes them using a selected model, and returns generated answers. This node is typically used for tasks such as reasoning, summarization, content generation, and conversational response.

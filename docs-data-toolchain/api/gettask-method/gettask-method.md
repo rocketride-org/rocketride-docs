@@ -4,7 +4,7 @@ date: 2025-07-29
 ---
 
 <head>
-  <title>GetTask Method - Aparavi Data Toolchain Documentation</title>
+  <title>GetTask Method - RocketRide Documentation</title>
 </head>
 
 - [Overview](#overview)
@@ -171,7 +171,7 @@ checkTaskStatus();
 
 ## **API Endpoint**
 
-This method calls the Aparavi API endpoint:
+This method calls the RocketRide API endpoint:
 
 - **URL**: `GET /task`
 - **Headers**: `Authorization: your-api-key`
@@ -181,4 +181,4 @@ This method calls the Aparavi API endpoint:
 
 **Next:** Learn how to [delete tasks](../deletetask-method/deletetask-method.md) when they're no longer needed.
 
-© 2025 Aparavi. All rights reserved.
+© 2025 RocketRide. All rights reserved.
