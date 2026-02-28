@@ -15,7 +15,7 @@ const config: Config = {
 	},
 
 	// Production url
-	url: 'https://docs.rocketride.ai/',
+	url: 'https://docs.rocketride.org/',
 
 	// Set the /<baseUrl>/ pathname under which your site is served
 	// For GitHub pages deployment, it is often '/<projectName>/'
