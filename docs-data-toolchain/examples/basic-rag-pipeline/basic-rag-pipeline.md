@@ -122,7 +122,7 @@ The **Qdrant Vector Store node** is critical in a RAG pipeline. It is responsi
 | Host | localhost | The server address where Qdrant is running. |
 | Port | 6333 | The port number Qdrant listens on (default: 6333). |
 | Retrieval Score | Related | Sets the minimum similarity score for retrieving relevant vectors. |
-| Collection | APARAVI | The name of the Qdrant collection used to store and query vectors. |
+| Collection | ROCKETRIDE | The name of the Qdrant collection used to store and query vectors. |
 
 ### **6\. LLM – Gemini Node**
 

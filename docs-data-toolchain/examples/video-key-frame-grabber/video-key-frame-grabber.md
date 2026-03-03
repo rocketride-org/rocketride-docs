@@ -317,7 +317,7 @@ Frame timing and extraction information
   "data": {
     "objects": {
       "cce2fa78-f7fb-5a2e-b391-7c896aeda5cf": {
-        "text": "FRAMES EXTRACTED:\n- Frame 1: 0.0 seconds\n- Frame 2: 5.0 seconds\n- Frame 3: 10.0 seconds\n\nTHUMBNAILS GENERATED:\n- thumbnail_1.jpg\n- thumbnail_2.jpg\n- thumbnail_3.jpg\n\nEMBEDDINGS CREATED:\n- Vector embeddings for similarity search\n\nSTORED IN QDRANT:\n- Collection: APARAVI\n- Host: localhost:6333"
+        "text": "FRAMES EXTRACTED:\n- Frame 1: 0.0 seconds\n- Frame 2: 5.0 seconds\n- Frame 3: 10.0 seconds\n\nTHUMBNAILS GENERATED:\n- thumbnail_1.jpg\n- thumbnail_2.jpg\n- thumbnail_3.jpg\n\nEMBEDDINGS CREATED:\n- Vector embeddings for similarity search\n\nSTORED IN QDRANT:\n- Collection: ROCKETRIDE\n- Host: localhost:6333"
       }
     }
   }

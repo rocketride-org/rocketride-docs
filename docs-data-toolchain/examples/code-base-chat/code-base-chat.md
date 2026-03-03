@@ -139,7 +139,7 @@ Purpose: Stores and retrieves vector embeddings for similarity search
 | --- | --- | --- |
 | Host | localhost | Your local Qdrant server hostname |
 | Port | 6333 | Qdrant server port number |
-| Collection | APARAVI | Vector collection name |
+| Collection | ROCKETRIDE | Vector collection name |
 
 #### **Qdrant Cloud Parameters**
 
@@ -148,7 +148,7 @@ Purpose: Stores and retrieves vector embeddings for similarity search
 | Host | \- | Cloud instance URL (e.g., `<instance>.<region>.qdrant.io`) |
 | Port | 443 | HTTPS port for cloud connections |
 | API Key | Required | Authentication key for cloud access |
-| Collection | APARAVI | Cloud collection name |
+| Collection | ROCKETRIDE | Cloud collection name |
 
 * * *
 
@@ -199,7 +199,7 @@ For Cloud Setup:
 - Set Type to "Cloud"
 - Enter your Qdrant Cloud host URL
 - Provide your API key
-- Use default collection name "APARAVI"
+- Use default collection name "ROCKETRIDE"
 
 ### **Step 3: Run and Test**
 

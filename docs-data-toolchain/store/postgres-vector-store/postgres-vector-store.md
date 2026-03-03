@@ -30,9 +30,9 @@ The **PostgreSQL Vector Store** node connects your pipeline to a **PostgreSQL da
 - **User**: The username for database authentication.
     - _Example_ - postgres
 - **Database**: The name of the database to connect to.
-    - _Example_ - aparavi
+    - _Example_ - rocketride
 - **Table**: The name of the database table where vectors will be stored.
-    - _Example_ - aparavi
+    - _Example_ - rocketride
 - **Retrieval Score**: The minimum similarity score (from 0.0 to 1.0) for a result to be considered relevant.
     - _Example_ - 0.5
 

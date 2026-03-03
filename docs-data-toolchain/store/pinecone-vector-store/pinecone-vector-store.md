@@ -7,7 +7,7 @@ date: 2025-05-18
   <title>Pinecone Vector Store - RocketRide Documentation</title>
 </head>
 
-The Pinecone Vector Store node connects your pipeline to a Pinecone index, enabling high-speed vector search capabilities. It stores and retrieves document embeddings and matches them against queries using vector similarity. 
+The Pinecone Vector Store node connects your pipeline to a Pinecone index, enabling high-speed vector search capabilities. It stores and retrieves document embeddings and matches them against queries using vector similarity.
 
 
 ### Inputs
@@ -24,10 +24,10 @@ The Pinecone Vector Store node connects your pipeline to a Pinecone index, enabl
 ### Configuration Steps
 
 - Type of Pinecone Connection - Choose your Pinecone connection method
-    - Example - Pinecone Pod-Based Index
-- API Key - Enter your Pinecone API key
-- Retrieval Score - Select the minimum similarity threshold for result relevance
-    - Example - Related
-- Collection - Specify the name of the Pinecone collection (index)
+    - Example - Pinecone Pod-Based Index
+- API Key - Enter your Pinecone API key
+- Retrieval Score - Select the minimum similarity threshold for result relevance
+    - Example - Related
+- Collection - Specify the name of the Pinecone collection (index)
     - Rules - lowercase, alphanumeric, hyphens allowed
-    - Example - aparavi
+    - Example - rocketride

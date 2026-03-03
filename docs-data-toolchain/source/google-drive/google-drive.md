@@ -25,7 +25,7 @@ Configuration requires domain-level access and authentication via a service acco
             - This file contains the necessary credentials to authenticate API requests.
     - User - uses a "secret file" to access person Gmail
         - Google products will need a "Client Secret File".
-        - Look at the following documentation for help creating the file: [Google Account Setup](https://staging.aparavi.com/documentation-aparavi/aparavi-data-suite-documentation/sources-technical-documentation/google-personal-account/)
+        - Look at the following documentation for help creating the file: [Google Account Setup](https://docs.rocketride.ai/data-suite/sources/google-personal-account)
 
 ### Path Configuration
 

@@ -111,12 +111,12 @@ const config: Config = {
 		},
 		footer: {
 			copyright: `© ${new Date().getFullYear()} RocketRide |
-      <a href="https://aparavi.com/end-user-license-agreement/" target="_blank" style="color: inherit; text-decoration: none;">End User License Agreement</a> | 
-      <a href="https://aparavi.com/master-saas-agreement/" target="_blank" style="color: inherit; text-decoration: none;">Master Saas Agreement</a> | 
-      <a href="https://aparavi.com/privacy-policy" target="_blank" style="color: inherit; text-decoration: none;">Privacy Policy</a> | 
-      <a href="https://github.com/rocketride-ai" target="_blank" style="color: inherit; text-decoration: none;">GitHub</a> | 
-      <a href="https://discord.gg/9hr3tdZmEG" target="_blank" style="color: inherit; text-decoration: none;">Discord</a> | 
-      <a href="https://www.youtube.com/@AparaviSoftware" target="_blank" style="color: inherit; text-decoration: none;">YouTube</a>`,
+      <a href="https://rocketride.ai/end-user-license-agreement/" target="_blank" style="color: inherit; text-decoration: none;">End User License Agreement</a> |
+      <a href="https://rocketride.ai/master-saas-agreement/" target="_blank" style="color: inherit; text-decoration: none;">Master Saas Agreement</a> |
+      <a href="https://rocketride.ai/privacy-policy" target="_blank" style="color: inherit; text-decoration: none;">Privacy Policy</a> |
+      <a href="https://github.com/rocketride-ai" target="_blank" style="color: inherit; text-decoration: none;">GitHub</a> |
+      <a href="https://discord.gg/9hr3tdZmEG" target="_blank" style="color: inherit; text-decoration: none;">Discord</a> |
+      <a href="https://www.youtube.com/@RocketRideAI" target="_blank" style="color: inherit; text-decoration: none;">YouTube</a>`,
 		},
 		prism: {
 			theme: prismThemes.github,

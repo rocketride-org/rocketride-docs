@@ -36,7 +36,7 @@ date: 2025-07-19
 1. Click ▶️ on the RocketRide Sample Data node. You'll see two options in the Files section.
 2. The node fetches files from the configured drive path when you select **'Preselected Data Sets.'**
 3. If you select **'Custom Data sets,'** you'll need to provide the sample data path in the text box.
-4. Learn more about the Google Drive source node here: [link](https://aparavi.com/documentation-aparavi/data-toolchain-for-ai-documentation/sources-components-data-toolchain-for-ai-documentation/google-drive/)
+4. Learn more about the Google Drive source node here: [link](https://docs.rocketride.ai/data-toolchain/source/google-drive)
 
 ### **2\. Data Parser Node**
 
