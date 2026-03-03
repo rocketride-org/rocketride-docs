@@ -53,6 +53,15 @@ const config: Config = {
 				sidebarPath: './sidebars.ts',
 			},
 		],
+		[
+			'@docusaurus/plugin-content-docs',
+			{
+				id: 'agentic',
+				path: 'docs-agentic',
+				routeBasePath: '/agentic',
+				sidebarPath: './sidebarsAgentic.ts',
+			},
+		],
 	],
 
 	themeConfig: {
@@ -89,6 +98,13 @@ const config: Config = {
 					position: 'left',
 					docsPluginId: 'data-toolchain',
 					activeBasePath: '/',
+				},
+				{
+					label: 'Agentic',
+					to: '/agentic/agents',
+					position: 'left',
+					docsPluginId: 'agentic',
+					activeBasePath: '/agentic',
 				},
 				{
 					href: 'https://discord.gg/9hr3tdZmEG',
