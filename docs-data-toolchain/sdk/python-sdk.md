@@ -1,6 +1,6 @@
 ---
 id: python-sdk
-title: Python SDK
+title: Python
 ---
 
 <head>

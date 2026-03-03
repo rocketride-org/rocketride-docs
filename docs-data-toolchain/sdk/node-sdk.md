@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 id: node-sdk
-title: Node SDK
+title: Node
 ---
 
 <head>

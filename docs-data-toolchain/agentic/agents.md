@@ -1,11 +1,11 @@
 ---
-title: RocketRide Agents
+title: Introduction
 date: 2026-03-02
 sidebar_position: 1
 ---
 
 <head>
-  <title>RocketRide Agents - RocketRide Documentation</title>
+  <title>Introduction - RocketRide Documentation</title>
 </head>
 
 ## What it is / what it does

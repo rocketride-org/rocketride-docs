@@ -1,11 +1,11 @@
 ---
-title: Agent (LangChain)
+title: LangChain
 date: 2026-03-02
 sidebar_position: 2
 ---
 
 <head>
-  <title>Agent (LangChain) - RocketRide Documentation</title>
+  <title>LangChain - RocketRide Documentation</title>
 </head>
 
 ## What it is / what it does

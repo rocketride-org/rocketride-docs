@@ -1,11 +1,11 @@
 ---
-title: Agent (CrewAI)
+title: CrewAI
 date: 2026-03-02
 sidebar_position: 3
 ---
 
 <head>
-  <title>Agent (CrewAI) - RocketRide Documentation</title>
+  <title>CrewAI - RocketRide Documentation</title>
 </head>
 
 ## What it is / what it does
