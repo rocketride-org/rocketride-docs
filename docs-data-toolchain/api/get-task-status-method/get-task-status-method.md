@@ -1,5 +1,5 @@
 ---
-title: "get_task_status() / getTaskStatus() Method"
+title: "Get Task Status"
 date: 2025-07-29
 ---
 

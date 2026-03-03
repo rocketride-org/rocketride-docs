@@ -1,5 +1,5 @@
 ---
-title: "validate() Method"
+title: "Validate"
 date: 2025-07-29
 ---
 

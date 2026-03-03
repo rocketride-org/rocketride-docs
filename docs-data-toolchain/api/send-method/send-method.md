@@ -1,5 +1,5 @@
 ---
-title: "send() / sendFiles() / pipe() Methods"
+title: "Send / Send Files / Pipe"
 date: 2025-07-29
 ---
 

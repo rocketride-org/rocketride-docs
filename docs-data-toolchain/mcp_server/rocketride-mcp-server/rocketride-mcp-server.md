@@ -1,5 +1,5 @@
 ---
-title: "RocketRide MCP Server"
+title: "MCP Server"
 date: 2025-10-20
 ---
 

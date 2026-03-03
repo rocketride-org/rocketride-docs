@@ -1,5 +1,5 @@
 ---
-title: "use() Method"
+title: "Use"
 date: 2025-07-29
 ---
 

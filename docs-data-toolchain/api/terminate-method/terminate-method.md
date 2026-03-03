@@ -1,5 +1,5 @@
 ---
-title: "terminate() Method"
+title: "Terminate"
 date: 2025-07-29
 ---
 
