@@ -130,6 +130,6 @@ Technical Reference
 
 For detailed technical information, refer to:
 
-- [Definitions API Reference](https://github.com/AparaviSoftware/dtc-documentation/blob/main/docs/api-reference/definitions.md)
-- [Supported NLP Models](https://github.com/AparaviSoftware/dtc-documentation/blob/main/docs/reference/nlp-models.md)
-- Definitions Source Code ../../../aparavi-nodes/nodes/definitions/definitions.py
+- [Definitions API Reference](https://github.com/rocketride-ai/dtc-documentation/blob/main/docs/api-reference/definitions.md)
+- [Supported NLP Models](https://github.com/rocketride-ai/dtc-documentation/blob/main/docs/reference/nlp-models.md)
+- Definitions Source Code ../../../rocketride-nodes/nodes/definitions/definitions.py

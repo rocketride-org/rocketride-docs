@@ -63,7 +63,7 @@ This node pulls your source files (e.g., Google Drive, S3, local docs).
 1. 1. Click ▶️ on the RocketRide Sample Data node. You'll see two options in the Files section.
     2. The node fetches files from the configured drive path when you select **'Preselected Data Sets.'**
     3. If you select **'Custom Data sets,'** you'll need to provide the sample data path in the text box.
-    4. Learn more about the Google Drive source node here: [link](https://aparavi.com/documentation-aparavi/data-toolchain-for-ai-documentation/sources-components-data-toolchain-for-ai-documentation/google-drive/)
+    4. Learn more about the Google Drive source node here: [link](https://docs.rocketride.ai/data-toolchain/source/google-drive)
 
 ### **2\. Data Parser Node**
 
@@ -167,7 +167,7 @@ The **Qdrant Vector Store node** is critical in a RAG pipeline. It is responsi
 | Host | localhost | The server address where Qdrant is running. |
 | Port | 6333 | The port number Qdrant listens on (default: 6333). |
 | Retrieval Score | Related | Sets the minimum similarity score for retrieving relevant vectors. |
-| Collection | APARAVI | The name of the Qdrant collection used to store and query vectors. |
+| Collection | ROCKETRIDE | The name of the Qdrant collection used to store and query vectors. |
 
 ### **Hit the Play Button** ▶️
 

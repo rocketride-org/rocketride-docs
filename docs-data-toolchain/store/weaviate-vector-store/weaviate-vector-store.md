@@ -41,20 +41,20 @@ The [Weaviate](https://weaviate.io/) Vector Store node enables integration with 
     - Options - Related, Very Related
     - This determines what results are returned from the vector store.
 - **Collection** - The name of the collection or index to read/write vectors
-    - Example - aparavi
+    - Example - rocketride
     - Must be lowercase with optional hyphens
 - **Example**
     - Host: localhost
     - Port: 8080
     - gRPC Port: 50051
     - Retrieval Score: Related
-    - Collection: aparavi
+    - Collection: rocketride
 
 Weaviate Vector Store supports several deployment modes:
 
 ## **Local Mode**
 
-[This guide](https://staging.aparavi.com/documentation-aparavi/data-toolchain-for-ai-documentation/sources-components-data-toolchain-for-ai-documentation/remote%e2%80%91to%e2%80%91local-tunnel-ngrok/) walks you through configuring Ngrok on your **local machine**
+[This guide](https://docs.rocketride.ai/data-toolchain/source/remote-to-local-tunnel-ngrok) walks you through configuring Ngrok on your **local machine**
 
 ## **Cloud Mode**
 

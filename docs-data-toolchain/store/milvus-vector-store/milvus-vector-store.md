@@ -7,7 +7,7 @@ date: 2025-05-03
   <title>Milvus Vector Store - RocketRide Documentation</title>
 </head>
 
-The Milvus Vector Store node connects to a Milvus vector database to store and retrieve embeddings. This node is used to query semantically similar documents or vectors based on the user’s questions or inputs. 
+The Milvus Vector Store node connects to a Milvus vector database to store and retrieve embeddings. This node is used to query semantically similar documents or vectors based on the user's questions or inputs.
 
 
 ### Inputs
@@ -25,17 +25,17 @@ The Milvus Vector Store node connects to a Milvus vector database to store and r
 
 #### GUI
 
-- Type of Milvus Host - Choose your Milvus environment.
-    - Example - Milvus cloud server
-- Host - Define the endpoint of your Milvus instance.
+- Type of Milvus Host - Choose your Milvus environment.
+    - Example - Milvus cloud server
+- Host - Define the endpoint of your Milvus instance.
     - Format - `your-instance-name.region.zillizcloud.com`
-- Port - Set the port number used for Milvus API communication.
-    - Example - 443
-- API Key - Enter the access key provided by your Milvus service.
-- Retrieval Score - Set the minimum similarity score for returning search results.
-    - Options - Related, Highly Related, Most Relevant
-- Collection - Name the target collection where your vectors are stored and retrieved.
-    - Example - APARAVI
+- Port - Set the port number used for Milvus API communication.
+    - Example - 443
+- API Key - Enter the access key provided by your Milvus service.
+- Retrieval Score - Set the minimum similarity score for returning search results.
+    - Options - Related, Highly Related, Most Relevant
+- Collection - Name the target collection where your vectors are stored and retrieved.
+    - Example - ROCKETRIDE
 
 Milvus Vector Store supports several deployment modes:
 
@@ -64,21 +64,21 @@ This example shows how to use Milvus Vector Store in a basic Retrieval Augmented
 
 #### Connection Problems
 
-- Connection refused - Verify host and port settings
-- Authentication failure - Check API token validity
-- Timeout errors - Check network connectivity and Milvus server status
+- Connection refused - Verify host and port settings
+- Authentication failure - Check API token validity
+- Timeout errors - Check network connectivity and Milvus server status
 
 #### Query Performance
 
-- Slow queries - Optimize index type and search parameters
-- Memory errors - Check Milvus server resources
-- Poor search results - Ensure vector dimensions match between embeddings and collection
+- Slow queries - Optimize index type and search parameters
+- Memory errors - Check Milvus server resources
+- Poor search results - Ensure vector dimensions match between embeddings and collection
 
 ### Technical Reference
 
 For detailed technical information, refer to:
 
 - [Milvus Official Documentation](https://milvus.io/docs)
-- RocketRide Milvus node Source Code /../../../aparavi-nodes/nodes/milvus/milvus.py
-- [Milvus Configuration Schema](https://github.com/AparaviSoftware/dtc-documentation/blob/main/aparavi-nodes/nodes/milvus/services.json)
-- [This guide](https://staging.aparavi.com/documentation-aparavi/data-toolchain-for-ai-documentation/sources-components-data-toolchain-for-ai-documentation/remote%e2%80%91to%e2%80%91local-tunnel-ngrok/) walks you through configuring Ngrok on your **local machine**
+- RocketRide Milvus node Source Code /../../../rocketride-nodes/nodes/milvus/milvus.py
+- [Milvus Configuration Schema](https://github.com/rocketride-ai/dtc-documentation/blob/main/rocketride-nodes/nodes/milvus/services.json)
+- [This guide](https://docs.rocketride.ai/data-toolchain/source/remote-to-local-tunnel-ngrok) walks you through configuring Ngrok on your **local machine**

@@ -150,6 +150,6 @@ For rule-based classification with custom categories: `{ "modelType": "rules", "
 
 For detailed technical information, refer to:
 
-- [Document Classification API Reference](https://github.com/AparaviSoftware/dtc-documentation/blob/main/docs/api-reference/document-classification.md)
-- [Predefined Classification Models](https://github.com/AparaviSoftware/dtc-documentation/blob/main/docs/reference/classification-models.md)
-- Classification Source Code /../../../aparavi-nodes/nodes/classification/classifier.py
+- [Document Classification API Reference](https://github.com/rocketride-ai/dtc-documentation/blob/main/docs/api-reference/document-classification.md)
+- [Predefined Classification Models](https://github.com/rocketride-ai/dtc-documentation/blob/main/docs/reference/classification-models.md)
+- Classification Source Code /../../../rocketride-nodes/nodes/classification/classifier.py

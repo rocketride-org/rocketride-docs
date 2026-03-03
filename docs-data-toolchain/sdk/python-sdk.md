@@ -14,501 +14,426 @@ A Python SDK for executing RocketRide pipelines using the Debug Adapter Protocol
 ## Features
 
 - **DAP-based communication** for reliable pipeline execution
-- **Simple execute-and-exit workflow** for pipeline automation
-- **Comprehensive error handling** and logging
-- **Automatic API key management** for all DAP commands
-- **Object-oriented data pipe management** with context manager support
-- **Parallel file upload capabilities** with progress events (default: 64 concurrent)
-- **Token-based operations** for data pipe commands
-- **Type hints** with full typing support
-- **AI chat functionality** with structured JSON responses
+- **Async/await** with full typing support
+- **Pipeline execution** from JSON files or Python configuration objects
+- **Streaming data pipes** with context manager support
+- **Parallel file uploads** with progress events
+- **AI chat** with structured JSON responses
 - **Event monitoring** for real-time pipeline status
 - **Automatic reconnection** with configurable persistence
+- **Environment variable substitution** in pipeline configs
 - **Command-line interface** for pipeline management
 
 ## Table of Contents
 
 - [Installation](#installation)
+- [Quick Start](#quick-start)
 - [Configuration](#configuration)
 - [CLI Basics](#cli-basics)
-- [SDK Quick Start](#sdk-quick-start)
 - [API Reference](#api-reference)
 - [Common Patterns](#common-patterns)
 - [Troubleshooting](#troubleshooting)
-- [License](#license)
 
 ## Installation
 
 ```bash
-pip install aparavi-client-python
+pip install rocketride
 ```
 
-**Note:** The distribution files use underscores (`aparavi_client_python`), but the module is imported as `aparavi_client`:
+The package includes both the SDK library and a `rocketride` CLI tool.
+
+## Quick Start
+
+### Basic Pipeline Execution
+
 ```python
-from aparavi_client import AparaviClient
+from rocketride import RocketRideClient
+
+async with RocketRideClient(uri='https://cloud.rocketride.ai', auth='your-api-key') as client:
+    # Start a pipeline from a JSON config file
+    result = await client.use(filepath='pipeline.json')
+    token = result['token']
+
+    # Send data for processing
+    response = await client.send(token, 'Process this text')
+    print(response)
+
+    # Terminate when done
+    await client.terminate(token)
 ```
 
-The package includes both the SDK library and a CLI tool.
+### Send Your First Request
+
+Create a `.env` file:
+
+```env
+ROCKETRIDE_APIKEY=your-api-key-here
+ROCKETRIDE_URI=https://cloud.rocketride.ai
+```
+
+Create `quick_start.py`:
+
+```python
+import asyncio
+from rocketride import RocketRideClient
+
+async def main():
+    async with RocketRideClient() as client:
+        # Start a pipeline
+        result = await client.use(filepath='pipeline.json')
+        token = result['token']
+        print(f'Pipeline started with token: {token}')
+
+        # Send data
+        response = await client.send(token, 'Hello, RocketRide!')
+        print(f'Response: {response}')
+
+        # Clean up
+        await client.terminate(token)
+
+asyncio.run(main())
+```
+
+Run it:
+
+```bash
+python quick_start.py
+```
 
 ## Configuration
 
 ### Environment Variables
 
-You can configure the client using environment variables or a `.env` file:
+Configure the client using environment variables or a `.env` file:
 
 ```env
-# .env file
-APARAVI_APIKEY=your-api-key-here
-APARAVI_URI=https://eaas.aparavi.com
+ROCKETRIDE_APIKEY=your-api-key-here
+ROCKETRIDE_URI=https://cloud.rocketride.ai
 ```
 
-The client will automatically parse the `.env` file if it exists and use the values as defaults. The priority order is:
+The client automatically reads `.env` if present. Priority order:
 
 1. **Constructor parameters** (highest priority)
 2. **`.env` file values**
-3. **Default values** (lowest priority)
+3. **Default values** (`https://cloud.rocketride.ai`)
 
-You can also pass configuration directly to the constructor:
+You can also pass configuration directly:
 
 ```python
-client = AparaviClient(
-    uri='https://eaas.aparavi.com',
-    auth='your-api-key'
+client = RocketRideClient(
+    uri='https://cloud.rocketride.ai',
+    auth='your-api-key',
 )
 ```
 
+Or use `http://localhost:5565` for a local RocketRide server.
+
 ### Environment Variable Substitution in Pipelines
 
-The SDK automatically performs template variable substitution in pipeline configurations. Any string containing `${APARAVI_*}` will be replaced with the corresponding value from your `.env` file.
+The SDK automatically substitutes `${ROCKETRIDE_*}` patterns in pipeline configurations with values from your `.env` file.
 
 **Example `.env` file:**
 ```env
-APARAVI_APIKEY=your-api-key
-APARAVI_URI=https://eaas.aparavi.com
-APARAVI_PROJECT_ID=project-123
-APARAVI_INPUT_PATH=/data/input
-APARAVI_OUTPUT_PATH=/data/output
+ROCKETRIDE_APIKEY=your-api-key
+ROCKETRIDE_URI=https://cloud.rocketride.ai
+ROCKETRIDE_PROJECT_ID=project-123
 ```
 
 **Example pipeline configuration:**
 ```json
 {
-  "pipeline": {
-    "project_id": "${APARAVI_PROJECT_ID}",
-    "components": [
-      {
-        "id": "data-processor",
-        "provider": "transform",
-        "config": {
-          "inputPath": "${APARAVI_INPUT_PATH}",
-          "outputPath": "${APARAVI_OUTPUT_PATH}",
-          "apiKey": "${APARAVI_APIKEY}"
-        }
+  "project_id": "${ROCKETRIDE_PROJECT_ID}",
+  "components": [
+    {
+      "id": "data-processor",
+      "provider": "transform",
+      "config": {
+        "apiKey": "${ROCKETRIDE_APIKEY}"
       }
-    ]
-  }
+    }
+  ]
 }
 ```
 
-**Using the pipeline:**
 ```python
 # Variables are automatically substituted when the pipeline starts
 result = await client.use(filepath='pipeline.json')
 ```
 
-**Key features:**
-- ✅ Only variables starting with `APARAVI_` are substituted (for security)
-- ✅ Unknown variables are left unchanged
-- ✅ Works with nested objects and arrays
-- ✅ Preserves the original pipeline configuration object
+- Only variables starting with `ROCKETRIDE_` are substituted
+- Unknown variables are left unchanged
+- Works with nested objects and arrays
+- Preserves the original pipeline configuration object
 
 ## CLI Basics
 
-The package includes an `aparavi` command-line tool for managing pipelines and file uploads.
+The package includes a `rocketride` command-line tool.
 
 ### CLI Commands
 
 **Start a pipeline:**
 ```bash
-aparavi start my-pipeline.json --apikey YOUR_KEY
+rocketride start my-pipeline.json --apikey YOUR_KEY
 ```
 
 **Upload files:**
 ```bash
-aparavi upload files/*.csv --pipeline ./pipeline.json --apikey YOUR_KEY
+rocketride upload files/*.csv --pipeline ./pipeline.json --apikey YOUR_KEY
 # or with existing task token
-aparavi upload files/*.csv --token TASK_TOKEN --apikey YOUR_KEY
-# with custom thread count (default is 4)
-aparavi upload files/*.csv --token TASK_TOKEN --threads 10 --apikey YOUR_KEY
+rocketride upload files/*.csv --token TASK_TOKEN --apikey YOUR_KEY
 ```
 
 **Monitor pipeline status:**
 ```bash
-aparavi status --token TASK_TOKEN --apikey YOUR_KEY
+rocketride status --token TASK_TOKEN --apikey YOUR_KEY
 ```
 
 **Monitor pipeline events:**
 ```bash
-aparavi events DETAIL,SUMMARY --token TASK_TOKEN --apikey YOUR_KEY
-# or monitor all events
-aparavi events ALL --token TASK_TOKEN --apikey YOUR_KEY
-# with log file
-aparavi events ALL --token TASK_TOKEN --log events.log --apikey YOUR_KEY
+rocketride events DETAIL,SUMMARY --token TASK_TOKEN --apikey YOUR_KEY
 ```
 
 **Stop a pipeline:**
 ```bash
-aparavi stop --token TASK_TOKEN --apikey YOUR_KEY
-```
-
-## SDK Quick Start
-
-### Basic Pipeline Execution
-
-```python
-from aparavi_client import AparaviClient
-
-# Create client
-client = AparaviClient(
-    uri='https://eaas.aparavi.com',
-    auth='your-api-key'
-)
-
-# Connect to server
-await client.connect()
-
-# Start pipeline from file
-result = await client.use(filepath='pipeline.json')
-print(f'Pipeline started with token: {result["token"]}')
-
-# Disconnect
-await client.disconnect()
-```
-
-### Using Context Manager (Recommended)
-
-```python
-from aparavi_client import AparaviClient
-
-# Context manager handles connect/disconnect automatically
-async with AparaviClient(uri='https://eaas.aparavi.com', auth='your-api-key') as client:
-    # Client is automatically connected
-    result = await client.use(filepath='pipeline.json')
-    token = result['token']
-    
-    # Send data
-    response = await client.send(token, 'Process this text')
-    # Client automatically disconnects here
-```
-
-### Persistent Connection with Auto-Reconnect
-
-```python
-from aparavi_client import AparaviClient
-
-# Declare connection callbacks
-async def on_connected(info: str) -> None:
-    print(f'Connected: {info}')
-
-async def on_disconnected(reason: str, has_error: bool) -> None:
-    if has_error:
-        print(f'Connection lost: {reason}')
-
-# Create client with automatic reconnection enabled
-client = AparaviClient(
-    uri='https://eaas.aparavi.com',
-    auth='your-api-key',
-    persist=True,              # Enable automatic reconnection
-    reconnect_delay=2.0,       # Wait 2 seconds before reconnection attempts (default: 1.0)
-    on_connected=on_connected,
-    on_disconnected=on_disconnected
-)
-
-await client.connect()
-# If connection is lost, the client will automatically attempt to reconnect
-```
-
-### Data Transfer with Pipes
-
-```python
-# Using context manager (recommended)
-import json
-
-async with await client.pipe(token=myToken, mimetype='application/json') as pipe:
-    for item in data_items:
-        await pipe.write(json.dumps(item).encode())
-    results = await pipe.close()
-```
-
-### Bulk File Upload (Parallel)
-
-```python
-from aparavi_client import AparaviClient
-
-# Declare event handler
-async def handle_events(event):
-    if event['event'] == 'apaevt_status_upload':
-        body = event['body']
-        print(f"{body['filepath']}: {body['action']} - {body['bytes_sent']}/{body['file_size']} bytes")
-
-client = AparaviClient(
-    auth='your-api-key',
-    on_event=handle_events
-)
-
-await client.connect()
-
-# Simple file list (default: 64 concurrent uploads)
-files = ['doc1.pdf', 'data.csv', 'report.docx']
-results = await client.send_files(files, token)
-
-# With custom concurrency control
-results = await client.send_files(files, token, max_concurrent=10)
-
-# With metadata and MIME types
-files = [
-    ('report.pdf', {'department': 'finance'}),
-    ('data.csv', {'type': 'sales_data'}, 'text/csv')
-]
-results = await client.send_files(files, token)
-
-await client.disconnect()
+rocketride stop --token TASK_TOKEN --apikey YOUR_KEY
 ```
 
 ## API Reference
 
-### AparaviClient
+### RocketRideClient
 
 #### Constructor
 
 ```python
-AparaviClient(uri: str, auth: str, **kwargs)
+RocketRideClient(uri='', auth='', **kwargs)
 ```
 
 **Parameters:**
-- `uri` (str): Server URI (default: `https://eaas.aparavi.com`)
-- `auth` (str): API key for authentication
+- `uri` (str): Server URI (default: `https://cloud.rocketride.ai` or `ROCKETRIDE_URI` from env)
+- `auth` (str): API key for authentication (or `ROCKETRIDE_APIKEY` from env)
+- `env` (dict, optional): Dictionary of environment variables (instead of reading `.env`)
+- `module` (str, optional): Custom module name for client identification
+- `request_timeout` (int, optional): Default timeout in ms for individual requests
+- `max_retry_time` (int, optional): Max total time in ms to keep retrying connections
+- `persist` (bool, optional): Enable automatic reconnection (default: `False`)
 - `on_event` (callable, optional): Event handler for server events
 - `on_connected` (callable, optional): Connection established callback
 - `on_disconnected` (callable, optional): Connection lost callback
-- `persist` (bool, optional): Enable automatic reconnection (default: False)
-- `reconnect_delay` (float, optional): Delay between reconnection attempts in seconds (default: 1.0)
+- `on_connect_error` (callable, optional): Connection error callback
 
 #### Connection Methods
 
-**`async connect() -> None`**  
+**`async connect() -> None`**
 Establish connection to the RocketRide server.
 
-**`async disconnect() -> None`**  
-Close connection to the RocketRide server and stop automatic reconnection.
+**`async disconnect() -> None`**
+Close connection and stop automatic reconnection.
+
+**Context manager (recommended):**
+```python
+async with RocketRideClient(auth='your-api-key') as client:
+    # client is automatically connected
+    pass
+# automatically disconnected here
+```
 
 #### Execution Methods
 
-**`async use(**kwargs) -> Dict[str, Any]`**  
-Start an RocketRide pipeline for processing data. Automatically performs environment variable substitution on the pipeline configuration.
+**`async use(**kwargs) -> Dict[str, Any]`**
+Start a RocketRide pipeline for processing data.
 
 Parameters:
 - `pipeline` (dict, optional): Pipeline configuration dictionary
-- `filepath` (str, optional): Path to JSON file containing pipeline configuration
-- `token` (str, optional): Custom token for the pipeline (auto-generated if not provided)
-- `threads` (int, optional): Number of threads for execution (default: 1)
-- `args` (List[str], optional): Command line arguments to pass to pipeline
+- `filepath` (str, optional): Path to JSON/JSON5 pipeline config file
+- `token` (str, optional): Custom token (auto-generated if not provided)
+- `source` (str, optional): Override pipeline source component
+- `threads` (int, optional): Number of processing threads
+- `use_existing` (bool, optional): Reuse existing pipeline with same token
+- `args` (list[str], optional): Command-line arguments to pass to pipeline
+- `ttl` (int, optional): Time-to-live in seconds for idle pipelines
+- `pipelineTraceLevel` (str, optional): Trace level (`'none'`, `'metadata'`, `'summary'`, `'full'`)
 
-Returns: Dictionary containing the task token and other metadata
+Returns: Dictionary containing the task `token` and other metadata.
 
-**`async terminate(token: str) -> None`**  
+**`async terminate(token: str) -> None`**
 Terminate a running pipeline.
 
-**`async get_task_status(token: str) -> Dict[str, Any]`**  
-Get the current status of a running pipeline.
+**`async get_task_status(token: str) -> TASK_STATUS`**
+Get the current status of a running pipeline. Returns comprehensive status including `state`, `completed`, `totalCount`, `completedCount`, `failedCount`, `errors`, `warnings`, `metrics`, `tokens`, and `pipeflow`.
 
 #### Data Methods
 
-**`async send(token: str, data: Union[str, bytes], objinfo: Dict = {}, mimetype: str = None) -> Dict[str, Any]`**  
-Send data directly to a pipeline.
+**`async send(token: str, data: Union[str, bytes], objinfo: Dict = None, mimetype: str = None) -> PIPELINE_RESULT`**
+Send data to a running pipeline. Use with pipelines that have `webhook`, `filesys`, or `dropper` as the source. For chat/Q&A, use `chat()` instead.
 
-**Important:** Use this method with pipelines that have `webhook`, `filesys`, or `dropper` as the source component. For chat/Q&A systems, use `chat()` method instead with a `chat` source component.
-
-**`async send_files(files: List, token: str, max_concurrent: int = 64) -> List[Dict[str, Any]]`**  
-Upload multiple files in parallel with configurable concurrency.
+**`async send_files(files: List, token: str) -> UPLOAD_RESULT`**
+Upload multiple files in parallel.
 
 Parameters:
-- `files` (list): List of file paths or tuples (filepath, objinfo) or (filepath, objinfo, mimetype)
-- `token` (str): Task token of the pipeline
-- `max_concurrent` (int, optional): Maximum concurrent uploads (default: 64)
+- `files` (list): File paths or tuples `(filepath, objinfo)` or `(filepath, objinfo, mimetype)`
+- `token` (str): Task token
 
-**`async pipe(token: str, objinfo: Dict = {}, mimetype: str = None, provider: str = None) -> DataPipe`**  
-Create a streaming data pipe for sending large datasets.
+**`async pipe(token: str, objinfo: Dict = None, mime_type: str = None, provider: str = None) -> DataPipe`**
+Create a streaming data pipe.
 
 #### Chat Methods
 
-**`async chat(token: str, question: Question) -> Dict[str, Any]`**  
-Ask a question to RocketRide's AI and get an intelligent response.
+**`async chat(token: str, question: Question) -> PIPELINE_RESULT`**
+Ask a question to RocketRide's AI. Use with pipelines that have `chat` as the source.
 
-**Important:** Use this method with pipelines that have `chat` as the source component. For document processing/uploads, use `send()` or `send_files()` with a `webhook` source instead.
-
-**Example:**
 ```python
-from aparavi_client.schema import Question
+from rocketride import Question
 
 question = Question()
 question.addQuestion('What are the key findings?')
-
-response = await client.chat(token='chat-token', question=question)
+response = await client.chat(token=token, question=question)
 ```
+
+#### Validation Methods
+
+**`async validate(pipeline: dict, source: str = None) -> Dict[str, Any]`**
+Validate a pipeline configuration. Authentication is not required.
 
 #### Event Methods
 
-**`async set_events(token: str, event_types: List[str]) -> None`**  
-Subscribe to specific types of events from the server.
-
-**Example:**
-```python
-await client.set_events(token, ['apaevt_status_upload', 'apaevt_status_processing'])
-```
+**`async set_events(token: str, event_types: List[str]) -> None`**
+Subscribe to specific event types from the server.
 
 ### DataPipe
 
-Created via `client.pipe()` method. Provides a stream-like interface for uploading data.
+Created via `client.pipe()`. Provides a stream-like interface for uploading data.
 
-**`async open() -> DataPipe`**  
-Open the pipe for data transmission. Must be called before any write() operations.
+**`async open() -> DataPipe`** — Open the pipe for writing.
+**`async write(buffer: bytes) -> None`** — Write data (can be called multiple times).
+**`async close() -> PIPELINE_RESULT`** — Close the pipe and get results.
 
-**`async write(buffer: bytes) -> None`**  
-Write data to the pipe. Can be called multiple times to stream large datasets.
+Supports `async with` context manager:
 
-**`async close() -> Optional[Dict[str, Any]]`**  
-Close the pipe and get the processing results.
+```python
+async with await client.pipe(token, mime_type='text/csv') as pipe:
+    await pipe.write(csv_data.encode())
+    result = await pipe.close()
+```
 
 ### Question
 
 Question builder for AI chat operations.
 
-#### Constructor
-
 ```python
-Question(expectJson: bool = False)
+from rocketride import Question
+
+question = Question(expectJson=True)
+question.addQuestion('Extract email addresses')
+question.addInstruction('Format', 'Return as a JSON array')
+question.addExample('Find contacts', {'emails': ['john@company.com']})
+question.addContext('Contact us at john@company.com or 555-1234')
 ```
 
-#### Methods
-
-**`addQuestion(text: str) -> Question`**  
-Add the main question text.
-
-**`addInstruction(subtitle: str, instructions: str) -> Question`**  
-Add specific instructions to guide the AI's response.
-
-**`addExample(given: str, result: Any) -> Question`**  
-Provide an example of the desired response format.
-
-**`addContext(context: Union[str, Dict[str, Any]]) -> Question`**  
-Add contextual information for the AI.
-
-**`addHistory(history: QuestionHistory) -> Question`**  
-Add conversation history for context.
-
-**`addDocument(doc: Doc) -> Question`**  
-Add a document to the question context.
-
-**`addFilter(filter: DocFilter) -> Question`**  
-Add a document filter to narrow the search scope.
+**Methods:** `addQuestion()`, `addInstruction()`, `addExample()`, `addContext()`, `addHistory()`, `addDocument()`, `addFilter()`
 
 ## Common Patterns
+
+### Persistent Connection with Auto-Reconnect
+
+```python
+from rocketride import RocketRideClient
+
+async def on_connected(info):
+    print(f'Connected: {info}')
+
+async def on_disconnected(reason, has_error):
+    if has_error:
+        print(f'Connection lost: {reason}')
+
+client = RocketRideClient(
+    auth='your-api-key',
+    persist=True,
+    on_connected=on_connected,
+    on_disconnected=on_disconnected,
+)
+
+await client.connect()
+# Client will automatically reconnect if connection is lost
+```
+
+### Data Transfer with Pipes
+
+```python
+import json
+
+async with await client.pipe(token=token, mime_type='application/json') as pipe:
+    for item in data_items:
+        await pipe.write(json.dumps(item).encode())
+    results = await pipe.close()
+```
+
+### Bulk File Upload with Progress
+
+```python
+from rocketride import RocketRideClient
+
+async def handle_events(event):
+    if event['event'] == 'apaevt_status_upload':
+        body = event['body']
+        if body['action'] == 'write':
+            pct = (body['bytes_sent'] / body['file_size']) * 100
+            print(f"{body['filepath']}: {pct:.1f}%")
+
+client = RocketRideClient(auth='your-api-key', on_event=handle_events)
+await client.connect()
+
+result = await client.use(filepath='pipeline.json')
+token = result['token']
+
+files = ['doc1.pdf', 'data.csv', 'report.docx']
+results = await client.send_files(files, token)
+
+await client.disconnect()
+```
 
 ### AI Chat with Structured JSON Responses
 
 ```python
-from aparavi_client import AparaviClient
-from aparavi_client.schema import Question
+from rocketride import RocketRideClient, Question
 
-# Start chat pipeline once at the beginning
-client = AparaviClient(auth='your-api-key')
-await client.connect()
+async with RocketRideClient(auth='your-api-key') as client:
+    result = await client.use(filepath='chat_pipeline.json')
+    token = result['token']
 
-result = await client.use(filepath='chat_pipeline.json')
-token = result['token']
-
-# Simple question
-async def ask_question(my_question: str) -> str:
-    question = Question()
-    question.addQuestion(my_question)
-    
-    response = await client.chat(token=token, question=question)
-    
-    if 'answers' in response and len(response['answers']) > 0:
-        return response['answers'][0]
-    return 'No answer received'
-
-# Structured JSON response
-async def extract_data(source_document: str):
     question = Question(expectJson=True)
     question.addQuestion('Extract email addresses and phone numbers')
     question.addExample(
         'Find contacts',
-        {'emails': ['john@company.com'], 'phones': ['555-1234']}
+        {'emails': ['john@company.com'], 'phones': ['555-1234']},
     )
-    question.addContext(source_document)
-    
+    question.addContext('Contact us at john@company.com or 555-1234')
+
     response = await client.chat(token=token, question=question)
-    
-    if 'answers' in response and len(response['answers']) > 0:
-        return response['answers'][0]
-    return {}
-
-# Use the functions
-answer = await ask_question('What are the main themes in these documents?')
-data = await extract_data('Contact us at john@company.com or 555-1234')
-```
-
-### Document Processing Workflow
-
-```python
-from aparavi_client import AparaviClient
-
-async def process_documents():
-    async with AparaviClient(uri='https://eaas.aparavi.com', auth='api_key') as client:
-        # Start document processing pipeline
-        result = await client.use(filepath='document_analyzer.json')
-        token = result['token']
-        
-        # Upload files
-        files = ['report1.pdf', 'data.xlsx', 'notes.txt']
-        results = await client.send_files(files, token)
-        
-        return results
 ```
 
 ### Event Monitoring
 
 ```python
-from typing import Dict, Any
+from rocketride import RocketRideClient
+import asyncio
 
-async def handle_events(event: Dict[str, Any]) -> None:
+async def handle_events(event):
     event_type = event['event']
     body = event['body']
-    
     if event_type == 'apaevt_status_upload':
         if body['action'] == 'write':
             progress = (body['bytes_sent'] / body['file_size']) * 100
             print(f'Upload progress: {progress:.1f}%')
 
-# Create client with event handler
-client = AparaviClient(
-    uri='https://eaas.aparavi.com',
-    auth='api_key',
-    on_event=handle_events
-)
-
+client = RocketRideClient(auth='your-api-key', on_event=handle_events)
 await client.connect()
 
-# Start pipeline and subscribe to events
 result = await client.use(filepath='pipeline.json')
-await client.set_events(result['token'], ['apaevt_status_upload', 'apaevt_status_processing'])
+await client.set_events(result['token'], ['apaevt_status_upload'])
 
-# Monitor status
 while True:
     status = await client.get_task_status(result['token'])
-    if status['state'] in ['completed', 'failed']:
+    if status['completed']:
         break
     await asyncio.sleep(1)
 ```
@@ -518,30 +443,26 @@ while True:
 ### Error Handling
 
 ```python
-from aparavi_client import AparaviClient, AparaviException
+from rocketride import RocketRideClient, RocketRideException
 
 try:
-    client = AparaviClient(uri='https://eaas.aparavi.com', auth='your-api-key')
-    await client.connect()
-    
-    result = await client.use(filepath='pipeline.json')
-    print(f'Pipeline started: {result["token"]}')
-    
-except AparaviException as e:
+    async with RocketRideClient(auth='your-api-key') as client:
+        result = await client.use(filepath='pipeline.json')
+        print(f'Pipeline started: {result["token"]}')
+except RocketRideException as e:
     print(f'RocketRide Error: {e}')
 except ConnectionError as e:
     print(f'Connection Error: {e}')
 except Exception as e:
     print(f'Error: {e}')
-finally:
-    if client:
-        await client.disconnect()
 ```
 
 ### Common Issues
 
 **Connection Failed**:
-- Ensure you're using the latest version: `pip install --upgrade aparavi-client-python`
+- Verify your `ROCKETRIDE_URI` is correct
+- For local servers: `http://localhost:5565`
+- For cloud: `https://cloud.rocketride.ai`
 - Check your network connection and firewall settings
 
 **403 Forbidden Error**:
@@ -555,10 +476,6 @@ finally:
 **Upload Errors**:
 - Ensure files are accessible and not too large
 - Check file permissions
-
-**Authentication Errors**:
-- Verify your API key is correct
-- Ensure the key has the necessary permissions
 
 ## Requirements
 

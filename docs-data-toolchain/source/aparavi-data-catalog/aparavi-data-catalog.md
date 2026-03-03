@@ -71,4 +71,4 @@ The RocketRide Data Catalog connector streams curated, processed data from Rocke
 
 ## Additional Resources
 
-* <a href="https://docs.aparavi.com/data-suite/overview" target="_blank" rel="noopener">RocketRide Documentation</a>
+* <a href="https://docs.rocketride.ai/data-suite/overview" target="_blank" rel="noopener">RocketRide Documentation</a>

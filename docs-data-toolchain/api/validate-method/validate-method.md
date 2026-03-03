@@ -1,205 +1,177 @@
 ---
-title: "Validate Method"
+title: "validate() Method"
 date: 2025-07-29
 ---
 
 <head>
-  <title>Validate Method - RocketRide Documentation</title>
+  <title>validate() Method - RocketRide Documentation</title>
 </head>
 
 - [Overview](#overview)
 - [Method Signature](#method-signature)
 - [Parameters](#parameters)
 - [Returns](#returns)
-- [Throws](#throws)
 - [Usage Examples](#usage-examples)
-- [Pipeline Configuration Structure](#pipeline-configuration-structure)
 - [Response Format](#response-format)
 - [Error Handling](#error-handling)
-- [Performance Considerations](#performance-considerations)
-- [Security Notes](#security-notes)
-- [Related Methods](#related-methods)
 - [API Endpoint](#api-endpoint)
+- [Related Methods](#related-methods)
 
 ## **Overview**
 
-The `validate` method allows you to validate pipeline configurations against the RocketRide API before executing them. This is an essential step in ensuring your data transfer tasks will run successfully.
+The `validate()` method checks a pipeline configuration for structural correctness before executing it. It verifies component compatibility, connection integrity, and resolves the execution chain. This is useful for catching configuration errors early, before starting a pipeline.
+
+Authentication is **not required** for validation — the endpoint is public.
 
 ## **Method Signature**
 
-validate(pipelineJson)
+### Python (async)
+
+```python
+result = await client.validate(pipeline, source=None)
+```
+
+### TypeScript
+
+```typescript
+const result = await client.validate({ pipeline, source? });
+```
 
 ## **Parameters**
 
 | Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
-| `pipelineJson` | `object` | Yes | The pipeline configuration object to validate |
+| `pipeline` | `dict` / `PipelineConfig` | Yes | Pipeline configuration object to validate |
+| `source` | `str` / `string` | No | Override for the source component ID |
+
+### Source Resolution
+
+If `source` is not provided, the server resolves it in this order:
+
+1. Explicit `source` parameter (if provided)
+2. `source` field inside the pipeline config
+3. Implied source: the single component whose `config.mode` is `'Source'`
 
 ## **Returns**
 
-- **Type**: `Promise<object>`
-- **Description**: API response containing validation results
-
-## **Throws**
-
-- `Error`: If validation fails or network error occurs
+- **Type**: `Dict[str, Any]` (Python) / `Record<string, unknown>` (TypeScript)
+- **Description**: Validation result containing errors, warnings, the resolved source component, and the execution chain
 
 ## **Usage Examples**
 
-### **Basic Validation**
+### Basic Validation
 
-```
-const AparaviDTC = require('aparavi-dtc-node-sdk');
+```python
+from rocketride import RocketRideClient
 
-const client = new AparaviDTC('your-api-key');
-
-async function validatePipeline() {
-  const pipeline = {
-    pipeline: {
-      components: [
-        {
-          name: 'source',
-          provider: 'file',
-          config: { path: '/data/source' }
-        },
-        {
-          name: 'destination',
-          provider: 'webhook',
-          config: { url: 'https://your-webhook.com/upload' }
-        }
-      ]
+async with RocketRideClient(auth='your-api-key') as client:
+    pipeline = {
+        'project_id': 'my-project',
+        'source': 'webhook_1',
+        'components': [
+            {'id': 'webhook_1', 'provider': 'webhook', 'config': {}},
+            {'id': 'processor_1', 'provider': 'ai_chat', 'config': {'model': 'gpt-4'},
+             'input': [{'from': 'webhook_1', 'lane': 'output'}]},
+            {'id': 'response_1', 'provider': 'response', 'config': {},
+             'input': [{'from': 'processor_1', 'lane': 'answer'}]},
+        ],
     }
-  };
 
-  try {
-    const result = await client.validate(pipeline);
-    console.log('Validation successful:', result);
-  } catch (error) {
-    console.error('Validation failed:', error.message);
-  }
+    result = await client.validate(pipeline)
+    print('Validation result:', result)
+```
+
+```typescript
+import { RocketRideClient } from 'rocketride';
+
+const client = new RocketRideClient({ auth: 'your-api-key' });
+await client.connect();
+
+const result = await client.validate({
+    pipeline: {
+        project_id: 'my-project',
+        source: 'webhook_1',
+        components: [
+            { id: 'webhook_1', provider: 'webhook', config: {} },
+            { id: 'processor_1', provider: 'ai_chat', config: { model: 'gpt-4' },
+              input: [{ from: 'webhook_1', lane: 'output' }] },
+            { id: 'response_1', provider: 'response', config: {},
+              input: [{ from: 'processor_1', lane: 'answer' }] },
+        ],
+    },
+});
+
+if (result.errors?.length) {
+    console.log('Validation errors:', result.errors);
+} else {
+    console.log('Pipeline is valid');
 }
 
-validatePipeline();
+await client.disconnect();
 ```
 
-## **Pipeline Configuration Structure**
+### Validate with Source Override
 
-The `pipelineJson` parameter should follow this structure:
-
-```
-{
-  pipeline: {
-    components: [
-      {
-        name: string,           // Component name
-        provider: string,       // Provider type (e.g., 'file', 'webhook')
-        config: object          // Provider-specific configuration
-      }
-    ]
-  }
-}
+```python
+result = await client.validate(pipeline, source='webhook_1')
 ```
 
-### **Common Provider Types**
-
-#### **File Provider**
-
-```
-{
-  name: 'source',
-  provider: 'file',
-  config: {
-    path: '/path/to/files'
-  }
-}
+```typescript
+const result = await client.validate({
+    pipeline: myPipeline,
+    source: 'webhook_1',
+});
 ```
 
-#### **Webhook Provider**
+### Validate Before Starting
 
-```
-{
-  name: 'destination',
-  provider: 'webhook',
-  config: {
-    url: 'https://your-webhook.com/endpoint'
-  }
-}
+```python
+# Validate first, then start if valid
+result = await client.validate(pipeline)
+
+# Check the result for errors before proceeding
+# (exact structure depends on pipeline configuration)
+task = await client.use(pipeline=pipeline)
 ```
 
 ## **Response Format**
 
-### **Successful Validation**
+The validation result contains information about the pipeline's structural validity, including any errors and warnings found, the resolved source component, and the execution chain.
 
-```
+```json
 {
-  status: 'valid',
-  message: 'Pipeline configuration is valid',
-  timestamp: '2024-01-15T10:30:00Z'
+  "errors": [],
+  "warnings": [],
+  "resolved": { ... },
+  "chain": [ ... ]
 }
 ```
 
-### **Failed Validation**
-
-```
-{
-  status: 'invalid',
-  errors: [
-    {
-      component: 'source',
-      field: 'path',
-      message: 'Path does not exist or is not accessible'
-    }
-  ],
-  timestamp: '2024-01-15T10:30:00Z'
-}
-```
+If validation fails (e.g., missing components, invalid connections), the `errors` array will contain descriptive messages.
 
 ## **Error Handling**
 
-### **Common Validation Errors**
+| Error | Cause |
+| --- | --- |
+| `RuntimeError` / `Error` | Server returned a validation error (e.g., invalid pipeline structure) |
 
-#### **Invalid Component Configuration**
-
-**Error:** Component 'source' has invalid configuration `Error: Error validating pipeline: Invalid component configuration`
-
-#### **Missing Required Fields**
-
-**Error:** Missing required field 'path' in component 'source' `Error: Error validating pipeline: Missing required field 'path'`
-
-#### **Network Errors**
-
-**Error:** Unable to reach validation service `Error: Error validating pipeline: Network timeout`
-
-## **Performance Considerations**
-
-- **Validation Time**: Validation typically completes within 1-3 seconds
-- **Network Dependency**: Requires internet connection to reach RocketRide API
-- **Caching**: Consider caching validation results for repeated configurations
-- **Batch Validation**: Validate multiple pipelines sequentially, not in parallel
-
-## **Security Notes**
-
-- **API Key**: Your API key is sent with each validation request
-- **HTTPS**: All validation requests use HTTPS encryption
-- **No Data Transfer**: Validation does not transfer any actual data
-- **Read-Only**: Validation is a read-only operation
-
-## **Related Methods**
-
-- [`startTask()`](../starttask-method/starttask-method.md) - Start a validated pipeline
-- [`getTask()`](../gettask-method/gettask-method.md) - Check task status after starting
-- [`deleteTask()`](../deletetask-method/deletetask-method.md) - Clean up tasks
+```python
+try:
+    result = await client.validate(pipeline)
+except RuntimeError as e:
+    print(f'Validation failed: {e}')
+```
 
 ## **API Endpoint**
 
-This method calls the RocketRide API endpoint:
+This method communicates via the RocketRide DAP protocol over WebSocket. The equivalent HTTP endpoint is:
 
-- **URL**: `POST /pipe/validate`
-- **Headers**: `Authorization: your-api-key`, `Content-Type: application/json`
-- **Body**: Pipeline configuration object
+- **Method**: `POST /pipe/validate`
+- **Authentication**: Not required (public endpoint)
+- **Body**: `{ "pipeline": {...}, "source": "..." }`
 
-## **Next Steps**
+## **Related Methods**
 
-**Next:** Learn how to [start tasks](../starttask-method/starttask-method.md) after successful validation.
-
-© 2025 RocketRide. All rights reserved.
+- [`use()`](../use-method/use-method.md) - Start a validated pipeline
+- [`get_task_status()` / `getTaskStatus()`](../get-task-status-method/get-task-status-method.md) - Monitor pipeline status
+- [`terminate()`](../terminate-method/terminate-method.md) - Stop a running pipeline

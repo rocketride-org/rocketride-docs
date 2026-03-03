@@ -114,4 +114,4 @@ For detailed technical information, refer to:
 
 - [Amazon Bedrock Documentation](https://docs.aws.amazon.com/bedrock/)
 - [Bedrock Model IDs](https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html)
-- Bedrock node Source Code ../../../aparavi-nodes/nodes/llm\_bedrock/bedrock.py
+- Bedrock node Source Code ../../../rocketride-nodes/nodes/llm\_bedrock/bedrock.py
