@@ -43,6 +43,16 @@ const config: Config = {
 			} satisfies Preset.Options,
 		],
 	],
+	themes: [
+		[
+			'@easyops-cn/docusaurus-search-local',
+			{
+				hashed: true,
+				docsPluginIdForPreferredVersion: 'data-toolchain',
+				docsRouteBasePath: '/',
+			},
+		],
+	],
 	plugins: [
 		[
 			'@docusaurus/plugin-content-docs',
@@ -61,17 +71,6 @@ const config: Config = {
 			defaultMode: 'dark',
 			disableSwitch: false,
 			respectPrefersColorScheme: false,
-		},
-		algolia: {
-			// The application ID provided by Algolia
-			appId: '04UY0RFHYN',
-
-			// Public API key: it is safe to commit it
-			apiKey: 'f678cc674b267641e4c2e36a75e26c96',
-
-			indexName: 'docs-crawler',
-
-			contextualSearch: false,
 		},
 		navbar: {
 			title: 'RocketRide',
