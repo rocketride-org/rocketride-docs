@@ -1,29 +1,68 @@
 ---
 slug: /
 sidebar_position: 1
-sidebar_label: Intro
+sidebar_label: Overview
 ---
 
 <head>
-  <title>Introduction - RocketRide Documentation</title>
+  <title>Overview - RocketRide Documentation</title>
 </head>
 
-# Introduction
+# Overview
 
-RocketRide is a powerful, flexible platform for building custom data processing pipelines. By combining a series of modular components, or **Nodes**, you can create sophisticated workflows to handle everything from data ingestion and transformation to analysis and storage.
+RocketRide is a high-performance data processing engine built on a C++ core with a Python-extensible node system. With 50+ pipeline nodes, native AI/ML support, and SDKs for TypeScript, Python, and MCP, it lets you process, transform, and analyze data at scale — entirely on your own infrastructure.
 
-This documentation is your guide to understanding and mastering RocketRide.
+## Key Capabilities
 
-## How This Documentation is Organized
+- **High-performance C++ engine** — Native multithreading purpose-built for throughput, not prototypes.
+- **Visual pipeline builder** — Build, debug, test, and scale AI and data workloads from your IDE with an intuitive visual canvas. No browser required.
+- **50+ pipeline nodes** — Python-extensible, with 13 LLM providers, 8 vector databases, OCR, NER, PII anonymization, and more.
+- **Multi-agent workflows** — Orchestrate and scale agents with built-in support for CrewAI and LangChain.
+- **TypeScript, Python & MCP SDKs** — Integrate pipelines into native applications or expose them as tools for AI assistants.
+- **One-click deploy** — Run on Docker, on-prem, or RocketRide Cloud.
 
-Our documentation is structured to help you find the information you need quickly:
+## Core Concepts
 
-- **Examples**: Explore pre-built pipelines and common use cases. This is a great place to see what's possible with RocketRide and get inspiration for your own projects.
+### Pipelines
 
-- **Nodes**: Dive deep into the core components of the platform. This section contains detailed information on every available node—from `Source` and `Embedding` to `LLM` and `Store`—and explains how to configure them for your pipelines.
+A pipeline is a directed graph of **nodes** that processes data from input to output. Pipelines are defined as `.pipe` files (JSON format) and rendered visually in the IDE extension. You can run, monitor, and debug pipelines directly from the canvas.
 
-- **MCP Server**: Learn about the RocketRide Model Context Protocol (MCP) Server, which allows you to access your DTC pipelines as tools within MCP-compatible AI clients like Claude, Cursor, and Windsurf.
+### Nodes
 
-- **API Documentation**: Access the complete API reference. Use this for programmatic interaction and integration with RocketRide.
+Nodes are the building blocks of every pipeline. Each node performs a specific operation — calling an LLM, embedding text, querying a vector store, transforming data, and more. Nodes are organized into categories by function:
 
-Let's start building.
+| Category | Nodes | Description |
+|---|---|---|
+| **Source** | 15 | Where data enters the pipeline (webhook, chat, dropper) |
+| **LLM** | 13 | Language model providers (OpenAI, Anthropic, Google, and more) |
+| **Store** | 9 | Vector database integrations (Pinecone, Qdrant, Weaviate, and more) |
+| **Text** | 7 | Text analysis and transformation (NER, PII, sentiment, and more) |
+| **Agentic** | 4 | Agent framework orchestration (CrewAI, LangChain) |
+| **Other** | 4 | Utilities and routing |
+| **Embedding** | 3 | Generate vector representations |
+| **Image** | 3 | Image processing and OCR |
+| **Preprocessor** | 2 | Chunking and code processing |
+| **Audio** | 2 | Transcription and playback |
+| **Data** | 2 | Document parsing |
+| **Infrastructure** | 2 | Output and export |
+| **Video** | 1 | Frame extraction |
+| **Database** | 1 | Direct database access |
+
+For a full breakdown, see the [Nodes Overview](./nodes-overview.md).
+
+### Lanes
+
+Lanes are the connections between nodes. Each node has typed **input lanes** and **output lanes** that define what data it accepts and produces. You wire nodes together by connecting an output lane of one node to a compatible input lane of another. Some nodes (like agents or LLMs) can also be invoked as **tools** by a parent node.
+
+### Source Types
+
+Every pipeline begins with a **source node** that defines how data enters:
+- **Webhook** — Receives data via HTTP requests
+- **Chat** — Interactive conversational interface
+- **Dropper** — File-based input via drag-and-drop
+
+## Where to Go Next
+
+- **[Quickstart](./quickstart.md)** — Go from zero to a running pipeline in minutes.
+- **[Guides](./examples/advanced-rag-pipeline/advanced-rag-pipeline.md)** — Explore pre-built pipelines and common use cases.
+- **[Nodes Overview](./nodes-overview.md)** — Browse all 68 nodes by category.
