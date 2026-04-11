@@ -11,7 +11,7 @@ const BASE_URL =
 const manifest = [
   {
     url: `${BASE_URL}README-typescript-client.md`,
-    dest: "docs-data-toolchain/sdk/node-sdk.md",
+    dest: "docs/sdk/node-sdk.md",
     frontmatter: [
       "---",
       "sidebar_position: 2",
@@ -26,7 +26,7 @@ const manifest = [
   },
   {
     url: `${BASE_URL}README-python-client.md`,
-    dest: "docs-data-toolchain/sdk/python-sdk.md",
+    dest: "docs/sdk/python-sdk.md",
     frontmatter: [
       "---",
       "id: python-sdk",
@@ -40,7 +40,7 @@ const manifest = [
   },
   {
     url: `${BASE_URL}README-mcp-client.md`,
-    dest: "docs-data-toolchain/mcp_server/rocketride-mcp-server/rocketride-mcp-server.md",
+    dest: "docs/mcp_server/rocketride-mcp-server/rocketride-mcp-server.md",
     frontmatter: [
       "---",
       'title: "MCP Server"',
@@ -53,7 +53,7 @@ const manifest = [
   },
   {
     url: `${BASE_URL}README-vscode.md`,
-    dest: "docs-data-toolchain/vscode-extension/overview.md",
+    dest: "docs/vscode-extension/overview.md",
     frontmatter: [
       "---",
       "title: Overview",
@@ -77,6 +77,9 @@ async function fetchDoc({ url, dest, frontmatter }) {
 
   // Strip the top-level heading (first # line) — the frontmatter title handles it
   body = body.replace(/^#\s+.+\n+/, "");
+
+  // MDX requires self-closing <img> tags — convert <img ...> to <img ... />
+  body = body.replace(/<img(\s[^>]*?)>/g, "<img$1 />");
 
   const content = `${frontmatter}\n\n${body}`;
   const outPath = resolve(ROOT, dest);
