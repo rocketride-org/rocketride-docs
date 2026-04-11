@@ -1,0 +1,8 @@
+{
+  "label": "Tools",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Tool nodes that extend agent capabilities with external integrations."
+  }
+}

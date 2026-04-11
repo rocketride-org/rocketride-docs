@@ -58,7 +58,7 @@ const config: Config = {
 			'@docusaurus/plugin-content-docs',
 			{
 				id: 'data-toolchain',
-				path: 'docs-data-toolchain',
+				path: 'docs',
 				routeBasePath: '/',
 				sidebarPath: './sidebars.ts',
 			},
